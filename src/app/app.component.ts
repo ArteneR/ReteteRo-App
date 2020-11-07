@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component }   from '@angular/core';
+
 import { environment } from './../environments/environment';
+import { DataService } from './services/data.service/data.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,4 +12,10 @@ import { environment } from './../environments/environment';
 export class AppComponent {
   title = 'ReteteRo-App';
   appName = environment.appName;
+
+  constructor(private dataService: DataService) {}
+
+  testDummyEndpoint() {
+    this.dataService.testDummyEndpoint();
+  }
 }

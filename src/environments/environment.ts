@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  appName:    'ReteteRo-App Default!'
+  appName:    'ReteteRo-App Default!',
+  apiUrl:     'http://api.retete-ro.local/api'
 };
 
 /*
