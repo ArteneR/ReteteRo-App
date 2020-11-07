@@ -31,6 +31,7 @@ Open Angular app:
 
 Other links:
 - Run Angular app on Heroku: https://itnext.io/how-to-deploy-angular-application-to-heroku-1d56e09c5147
+- Env vars with Angular: https://www.itsolutionstuff.com/post/how-to-use-environment-variable-in-angularexample.html
 
 
 
@@ -125,19 +126,61 @@ Heroku configuration:
 
 
 
+===========================================================
 
 
 
+# Heroku cheatsheet:
+
+
+## Config vars:
+
+- View current config vars:
+    heroku config -a retete-ro-app
+    heroku config:get APP_NAME - a retete-ro-app
+
+
+- Set a config var:
+    heroku config:set APP_NAME=MyApp -a retete-ro-app
+
+
+- Remove a config var:
+    heroku config:unset APP_NAME -a retete-ro-app
 
 
 
+## View Logs:
+
+- Latest logs:
+    heroku logs --tail -a retete-ro-app
 
 
-- Command to build Angular app:
-	cd frontend
-	ng build --prod --outputPath=dist; rm -f ../public/*.js; rm -f ../public/*.css; rm -f ../public/*.ico; cp dist/*.js ../public/; cp dist/*.css ../public/; cp dist/*.ico ../public/; cp dist/index.html ../resources/views/index.html
+    
 
 
 
+===========================================================
 
 
+
+# Angular cheatsheet:
+
+
+## Environment variables:
+
+(https://www.itsolutionstuff.com/post/how-to-use-environment-variable-in-angularexample.html)
+
+- In component.ts:
+    import { environment } from './../environments/environment';
+    ...
+    appName = environment.appName;
+
+
+- In component.html:
+    <p>{{ appName }}</p>
+
+
+- Run app with specific environment:
+    Default:        ng serve
+    Dev:            ng serve --configuration=dev
+    Production:     ng serve --configuration=production
