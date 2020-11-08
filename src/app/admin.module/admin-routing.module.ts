@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent }       from './admin.component/admin.component';
 
 
-
 const adminRoutes: Routes = [
   {
     path: '',
