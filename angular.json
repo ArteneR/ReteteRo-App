@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/reset-css.less",
               "src/styles.less"
             ],
             "scripts": []
@@ -123,6 +124,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/reset-css.less",
               "src/styles.less"
             ],
             "scripts": []

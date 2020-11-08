@@ -184,3 +184,29 @@ Heroku configuration:
     Default:        ng serve
     Dev:            ng serve --configuration=dev
     Production:     ng serve --configuration=production
+
+
+
+## Components:
+
+- Genereate component:
+    ng generate component <component_name>
+
+
+
+## Modules:
+
+- Generate module:
+    ng generate module <module_name>
+
+
+
+## Services:
+
+
+
+
+## Directives:
+
+
+
