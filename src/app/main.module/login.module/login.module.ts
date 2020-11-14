@@ -1,8 +1,8 @@
 import { NgModule }           from '@angular/core';
 import { CommonModule }       from '@angular/common';
 
-import { LoginComponent }     from './login.component/login.component';
-import { LoginRoutingModule } from './login-routing.module';
+import { LoginComponent }     from '@app/main.module/login.module/login.component/login.component';
+import { LoginRoutingModule } from '@app/main.module/login.module/login-routing.module';
 
 
 @NgModule({

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }  from '@angular/core';
+import { first }              from 'rxjs/operators';
+
+import { User }               from '@app/_models/user';
+import { UserService }        from '@app/_services/user.service';
 
 
 @Component({
@@ -7,10 +11,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.less']
 })
 export class UsersComponent implements OnInit {
+        loading = false;
+        users: User[];
 
-  constructor() { }
+        constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
-  }
-
+        ngOnInit() {
+                this.loading = true;
+                
+                this.userService.getAll().pipe(first()).subscribe(response => {
+                    this.loading = false;
+                    if (response && response.data) {
+                        this.users = response.data;
+                    } 
+                });
+        }
 }

@@ -187,6 +187,15 @@ Heroku configuration:
 
 
 
+
+## Generating elements options:
+
+- Omit creating a folder:
+    --flat
+
+
+    
+
 ## Components:
 
 - Genereate component:
@@ -203,6 +212,8 @@ Heroku configuration:
 
 ## Services:
 
+- Genereate service:
+    ng generate service <service_name>
 
 
 
@@ -210,3 +221,16 @@ Heroku configuration:
 
 
 
+
+
+## Guards:
+
+- Generate guard:
+    ng generate guard <guard_name>
+
+
+
+## Interfaces:
+
+- Generate interface:
+    ng generate interface <interface_name>

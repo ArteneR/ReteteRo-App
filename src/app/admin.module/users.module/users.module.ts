@@ -1,8 +1,8 @@
 import { NgModule }           from '@angular/core';
 import { CommonModule }       from '@angular/common';
 
-import { UsersComponent }     from './users.component/users.component';
-import { UsersRoutingModule } from './users-routing.module';
+import { UsersComponent }     from '@app/admin.module/users.module/users.component/users.component';
+import { UsersRoutingModule } from '@app/admin.module/users.module/users-routing.module';
 
 
 @NgModule({

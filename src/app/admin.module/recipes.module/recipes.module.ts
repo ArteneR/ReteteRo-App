@@ -1,8 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { CommonModule }         from '@angular/common';
 
-import { RecipesComponent }     from './recipes.component/recipes.component';
-import { RecipesRoutingModule } from './recipes-routing.module';
+import { RecipesComponent }     from '@app/admin.module/recipes.module/recipes.component/recipes.component';
+import { RecipesRoutingModule } from '@app/admin.module/recipes.module/recipes-routing.module';
 
 
 @NgModule({

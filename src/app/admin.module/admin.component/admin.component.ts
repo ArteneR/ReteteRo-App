@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component }    from '@angular/core';
+
+import { AuthService }  from '@app/admin.module/_auth/auth.service';
+import { User }         from '@app/_models/user';
 
 
 @Component({
@@ -6,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.less']
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
+    user: User;
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+    constructor(private authService: AuthService) {
+        this.authService.user.subscribe(x => this.user = x);
+    }
 
+    
+    logout() {
+        this.authService.logout();
+    }
 }

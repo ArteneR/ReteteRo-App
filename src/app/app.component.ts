@@ -1,7 +1,7 @@
 import { Component }   from '@angular/core';
 
-import { environment } from './../environments/environment';
-import { DataService } from './services/data.service/data.service';
+import { environment } from '@environments/environment';
+import { DataService } from '@app/_services/data.service/data.service';
 
 
 @Component({
@@ -10,12 +10,12 @@ import { DataService } from './services/data.service/data.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'ReteteRo-App';
-  appName = environment.appName;
+    title = 'ReteteRo-App';
+    appName = environment.appName;
 
-  constructor(private dataService: DataService) {}
+    constructor(private dataService: DataService) {}
 
-  testDummyEndpoint() {
-    this.dataService.testDummyEndpoint();
-  }
+    testDummyEndpoint() {
+        this.dataService.testDummyEndpoint();
+    }
 }
