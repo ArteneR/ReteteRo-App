@@ -12,15 +12,15 @@ const mainRoutes: Routes = [
     children: [
       {
         path: 'login',
-        loadChildren: () => import('./login.module/login.module').then(m => m.LoginModule)
+        loadChildren: () => import('@app/main.module/login.module/login.module').then(m => m.LoginModule)
       },
       {
         path: 'recipes',
-        loadChildren: () => import('./recipes.module/recipes.module').then(m => m.RecipesModule)
+        loadChildren: () => import('@app/main.module/recipes.module/recipes.module').then(m => m.RecipesModule)
       },
       {
         path: 'contact',
-        loadChildren: () => import('./contact.module/contact.module').then(m => m.ContactModule)
+        loadChildren: () => import('@app/main.module/contact.module/contact.module').then(m => m.ContactModule)
       }
     ]
   }

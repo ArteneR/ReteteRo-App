@@ -13,21 +13,19 @@ const adminRoutes: Routes = [
     children: [
       {
         path: 'login',
-        loadChildren: () => import('./login.module/login.module').then(m => m.LoginModule)
+        loadChildren: () => import('@app/admin.module/login.module/login.module').then(m => m.LoginModule)
       },
       {
         path: '',
-        // canActivateChild: [AuthGuard],
+        canActivateChild: [AuthGuard],
         children: [
           {
             path: 'recipes',
-            canActivate: [AuthGuard],
-            loadChildren: () => import('./recipes.module/recipes.module').then(m => m.RecipesModule)
+            loadChildren: () => import('@app/admin.module/recipes.module/recipes.module').then(m => m.RecipesModule)
           },
           {
             path: 'users',
-            canActivate: [AuthGuard],
-            loadChildren: () => import('./users.module/users.module').then(m => m.UsersModule)
+            loadChildren: () => import('@app/admin.module/users.module/users.module').then(m => m.UsersModule)
           }
         ]
       }

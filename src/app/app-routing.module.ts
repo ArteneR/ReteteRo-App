@@ -9,11 +9,11 @@ const debugRouting = false;
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./main.module/main.module').then(m => m.MainModule)
+    loadChildren: () => import('@app/main.module/main.module').then(m => m.MainModule)
   },
   {
     path: 'admin',
-    loadChildren: () => import('./admin.module/admin.module').then(m => m.AdminModule)
+    loadChildren: () => import('@app/admin.module/admin.module').then(m => m.AdminModule)
   },
   { 
     path: '**', 
