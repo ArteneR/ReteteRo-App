@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component }        from '@angular/core';
+
+import { MainAuthService }  from '@app/main.module/_auth/main-auth.service';
+import { User }             from '@app/_models/user';
 
 
 @Component({
@@ -6,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.less']
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
+    user: User;
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+    constructor(private mainAuthService: MainAuthService) {
+        this.mainAuthService.user.subscribe(x => this.user = x);
+    }
 
+
+    logout() {
+        this.mainAuthService.logout();
+    }
 }

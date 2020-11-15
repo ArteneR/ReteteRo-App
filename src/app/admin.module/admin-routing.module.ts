@@ -3,7 +3,7 @@ import { CommonModule }         from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent }       from '@app/admin.module/admin.component/admin.component';
-import { AdminAuthGuard }            from '@app/admin.module/_auth/admin-auth.guard';
+import { AdminAuthGuard }       from '@app/admin.module/_auth/admin-auth.guard';
 
 
 const adminRoutes: Routes = [

@@ -12,6 +12,10 @@ import { MainRoutingModule }  from '@app/main.module/main-routing.module';
   imports: [
     CommonModule,
     MainRoutingModule
+  ],
+  providers: [],
+  bootstrap: [
+    MainComponent
   ]
 })
 export class MainModule { }
