@@ -1,7 +1,7 @@
-import { Component }    from '@angular/core';
+import { Component }        from '@angular/core';
 
-import { AuthService }  from '@app/admin.module/_auth/auth.service';
-import { User }         from '@app/_models/user';
+import { AdminAuthService } from '@app/admin.module/_auth/admin-auth.service';
+import { User }             from '@app/_models/user';
 
 
 @Component({
@@ -13,12 +13,12 @@ export class AdminComponent {
     user: User;
 
 
-    constructor(private authService: AuthService) {
-        this.authService.user.subscribe(x => this.user = x);
+    constructor(private adminAuthService: AdminAuthService) {
+        this.adminAuthService.user.subscribe(x => this.user = x);
     }
 
     
     logout() {
-        this.authService.logout();
+        this.adminAuthService.logout();
     }
 }

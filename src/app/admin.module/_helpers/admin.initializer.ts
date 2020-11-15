@@ -1,10 +1,10 @@
-import { AuthService } from '@app/admin.module/_auth/auth.service';
+import { AdminAuthService } from '@app/admin.module/_auth/admin-auth.service';
 
 
-export function adminInitializer(authService: AuthService) {
+export function adminInitializer(adminAuthService: AdminAuthService) {
         return () => new Promise(resolve => {
                 // Attempt to refresh token on Admin startup in order to auto authenticate
-                authService.refreshToken()
+                adminAuthService.refreshToken()
                     .subscribe()
                     .add(resolve);
         });

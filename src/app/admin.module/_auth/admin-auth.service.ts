@@ -11,7 +11,7 @@ import { User }                         from '@app/_models/user';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AdminAuthService {
         private refreshTokenTimeout;
         private userSubject: BehaviorSubject<User>;
         public  user: Observable<User>;
@@ -24,7 +24,7 @@ export class AuthService {
 
 
         login(username: string, password: string) {
-                return this.httpClient.post<any>(`${environment.apiUrl}/auth/login`, { username, password }, { withCredentials: false })
+                return this.httpClient.post<any>(`${environment.apiUrl}/admin/auth/login`, { username, password }, { withCredentials: false })
                     .pipe(map(response => {
                         let user = response && response.data;
                         this.userSubject.next(user);
@@ -36,7 +36,7 @@ export class AuthService {
 
 
         logout() {
-                this.httpClient.post<any>(`${environment.apiUrl}/auth/logout`, {}, { withCredentials: false }).subscribe();
+                this.httpClient.post<any>(`${environment.apiUrl}/admin/auth/logout`, {}, { withCredentials: false }).subscribe();
                 this.userSubject.next(null);
                 this.stopRefreshTokenTimer();
                 this.removeAccessToken();
@@ -45,7 +45,7 @@ export class AuthService {
 
 
         refreshToken() {
-                return this.httpClient.post<any>(`${environment.apiUrl}/auth/refresh-token`, {}, { withCredentials: false })
+                return this.httpClient.post<any>(`${environment.apiUrl}/admin/auth/refresh-token`, {}, { withCredentials: false })
                     .pipe(map((response) => {
                         if (response && (response.status == 'fail')) {
                             this.removeAccessToken();

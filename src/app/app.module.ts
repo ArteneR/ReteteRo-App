@@ -8,9 +8,8 @@ import { AppRoutingModule }                     from '@app/app-routing.module';
 import { AppComponent }                         from '@app/app.component';
 import { PageNotFoundComponent }                from '@app/page-not-found.component/page-not-found.component';
 import { adminInitializer }                     from '@app/admin.module/_helpers/admin.initializer';
-import { AuthService }                          from '@app/admin.module/_auth/auth.service';
-import { AuthErrorInterceptor }                 from '@app/admin.module/_auth/auth-error.interceptor';
-import { AuthJwtInterceptor }                   from '@app/admin.module/_auth/auth-jwt.interceptor';
+import { AdminAuthService }                     from '@app/admin.module/_auth/admin-auth.service';
+import { AuthJwtInterceptor }                   from '@app/_auth/auth-jwt.interceptor';
 
 
 @NgModule({
@@ -26,9 +25,8 @@ import { AuthJwtInterceptor }                   from '@app/admin.module/_auth/au
   ],
   providers: [
     DataService,
-    { provide: APP_INITIALIZER, useFactory: adminInitializer, multi: true, deps: [AuthService] },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthJwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthErrorInterceptor, multi: true }
+    { provide: APP_INITIALIZER, useFactory: adminInitializer, multi: true, deps: [AdminAuthService] },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthJwtInterceptor, multi: true }
   ],
   bootstrap: [
     AppComponent
