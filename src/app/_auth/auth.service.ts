@@ -70,6 +70,9 @@ export class AuthService {
                 return false;
             }
 
+            // Stop previous refresh token timer
+            this.stopRefreshTokenTimer();
+
             const jwtToken = JSON.parse(atob(this.userValue.accessToken.jwt.split('.')[1]));
             const expires = new Date(jwtToken.exp * 1000);
             const timeout = expires.getTime() - Date.now() - (60 * 1000);

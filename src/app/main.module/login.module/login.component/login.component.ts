@@ -19,11 +19,7 @@ export class LoginComponent implements OnInit {
         error     = '';
 
         
-        constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, private authService: AuthService) { 
-                if (this.authService.userValue) { 
-                    this.router.navigate(['/']);
-                }
-        }
+        constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, private authService: AuthService) {  }
 
 
         ngOnInit() {
