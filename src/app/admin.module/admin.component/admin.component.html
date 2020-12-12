@@ -1,7 +1,14 @@
 <div class="admin-component">
     <p>Admin works!</p>
 
-    <button (click)="logout()">Logout</button>
+    <ul>
+        <li><a routerLink="/admin" routerLinkActive="active">Admin Home</a></li>
+        <li><a routerLink="/admin/login" routerLinkActive="active">Admin Login</a></li>
+        <li><a routerLink="/admin/users" routerLinkActive="active">Admin Users</a></li>
+        <li><a routerLink="/admin/recipes" routerLinkActive="active">Admin Recipes</a></li>
+        <li><a routerLink="/" routerLinkActive="active">Main</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+    </ul>
 
     <router-outlet></router-outlet>
 </div>

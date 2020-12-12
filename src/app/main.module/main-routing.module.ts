@@ -3,7 +3,7 @@ import { CommonModule }         from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent }        from '@app/main.module/main.component/main.component';
-import { MainAuthGuard }        from '@app/main.module/_auth/main-auth.guard';
+import { AuthGuard }            from '@app/_auth/auth.guard';
 
 
 const mainRoutes: Routes = [
@@ -17,10 +17,10 @@ const mainRoutes: Routes = [
       },
       {
         path: '',
-        canActivateChild: [MainAuthGuard],
         children: [
           {
             path: 'recipes',
+            canActivate: [AuthGuard],
             loadChildren: () => import('@app/main.module/recipes.module/recipes.module').then(m => m.RecipesModule)
           },
           {

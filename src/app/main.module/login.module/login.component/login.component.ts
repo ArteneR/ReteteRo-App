@@ -3,7 +3,7 @@ import { Router, ActivatedRoute }             from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { first }                              from 'rxjs/operators';
 
-import { MainAuthService }                   from '@app/main.module/_auth/main-auth.service';
+import { AuthService }                        from '@app/_auth/auth.service';
 
 
 @Component({
@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
         error     = '';
 
         
-        constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, private mainAuthService: MainAuthService) { 
-                if (this.mainAuthService.userValue) { 
+        constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, private authService: AuthService) { 
+                if (this.authService.userValue) { 
                     this.router.navigate(['/']);
                 }
         }
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
                 }
 
                 this.loading = true;
-                this.mainAuthService.login(this.f.username.value, this.f.password.value)
+                this.authService.login(this.f.username.value, this.f.password.value)
                     .pipe(first())
                     .subscribe({
                         next: () => {

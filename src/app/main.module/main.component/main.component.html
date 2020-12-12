@@ -1,7 +1,16 @@
 <div class="main-component">
     <p>Main works!</p>
 
-    <button (click)="logout()">Logout</button>
+    <ul>
+        <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        <li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>
+        <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+    </ul>
+
+    <br/>
     
     <router-outlet></router-outlet>
 </div>

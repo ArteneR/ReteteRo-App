@@ -1,6 +1,6 @@
 import { Component }        from '@angular/core';
 
-import { MainAuthService }  from '@app/main.module/_auth/main-auth.service';
+import { AuthService }      from '@app/_auth/auth.service';
 import { User }             from '@app/_models/user';
 
 
@@ -13,12 +13,12 @@ export class MainComponent {
     user: User;
 
 
-    constructor(private mainAuthService: MainAuthService) {
-        this.mainAuthService.user.subscribe(x => this.user = x);
+    constructor(private authService: AuthService) {
+        this.authService.user.subscribe(x => this.user = x);
     }
 
 
     logout() {
-        this.mainAuthService.logout();
+        this.authService.logout();
     }
 }
