@@ -8,33 +8,42 @@ import { AuthService }      from '@app/_auth/auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-    constructor(private authService: AuthService, private router: Router) { };
+        constructor(private authService: AuthService, private router: Router) { };
 
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        const user = this.authService.userValue;
-        if (user) {
-            return true;
-        } 
-        else {
-            if (this.isAdminRoute(state.url)) {
-                this.router.navigate(['/admin/login'], { queryParams: { returnUrl: state.url } });
-            }
-            else {
-                this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
-            }
+        canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+                const user = this.authService.userValue;
+
+                if (this.isAdminRoute(state.url)) {
+                    if (user && this.isAdmin(user)) {
+                        return true;
+                    }
+
+                    this.router.navigate(['/admin/login'], { queryParams: { returnUrl: state.url } });
+                } 
+                else {
+                    if (user) {
+                        return true;
+                    }
+
+                    this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+                }
+
+                return false;
         }
-        
-        return false;
-    }
 
 
-    canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        return this.canActivate(route, state);
-    }
+        canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+                return this.canActivate(route, state);
+        }
 
 
-    isAdminRoute(url: string): boolean {
-        return url.indexOf('/admin') > -1;
-    }
+        isAdminRoute(url: string): boolean {
+                return url && url.indexOf('/admin') > -1;
+        }
+
+
+        isAdmin(user) {
+                return user && user.roles.indexOf('admin') > -1;
+        }
 }
