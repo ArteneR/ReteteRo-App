@@ -63,20 +63,20 @@ export class AuthService {
         }
 
 
-        public get userValue(): User {
+        public get userMetadata(): User {
                 return this.userSubject.value;
         }
 
 
         private startRefreshTokenTimer() {
-                if (!this.userValue || !this.userValue.accessToken) {
+                if (!this.userMetadata || !this.userMetadata.accessToken) {
                         return false;
                 }
 
                 // Stop previous refresh token timer
                 this.stopRefreshTokenTimer();
 
-                const jwtToken = JSON.parse(atob(this.userValue.accessToken.jwt.split('.')[1]));
+                const jwtToken = JSON.parse(atob(this.userMetadata.accessToken.jwt.split('.')[1]));
                 const expires = new Date(jwtToken.exp * 1000);
                 const timeout = expires.getTime() - Date.now() - (60 * 1000);
 
@@ -90,7 +90,7 @@ export class AuthService {
 
 
         private saveAccessToken() {
-                const accessToken = this.userValue ? this.userValue.accessToken : null;
+                const accessToken = this.userMetadata ? this.userMetadata.accessToken : null;
                 
                 if (accessToken) {
                         localStorage.setItem('accessToken', JSON.stringify(accessToken));

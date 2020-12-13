@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
 
 
         canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-                const user = this.authService.userValue;
+                const user = this.authService.userMetadata;
 
                 if (this.isAdminRoute(state.url)) {
                     if (user && this.isAdmin(user)) {
