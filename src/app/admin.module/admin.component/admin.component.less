@@ -1,6 +1,59 @@
 
 .admin-component {
-    background-color: #1A3A4B;
+    background-color: #212121;
     color: #FFFFFF;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-nav {
+    background-color: #2A2A2B;
+    max-width: 300px;
+    width: 300px;
+
+    nav {
+        margin-top: 200px;
+        background-color: yellow;
+    }
+
+    nav > ul > li {
+        display: block;
+        background-color: #2F2F30;
+        padding: 20px;
+        border-bottom: 1px solid #2A2A2B;
+        cursor: pointer;
+        padding-left: 30px;
+
+        &:hover {
+            background-color: #2A2A2B;
+        }
+    }
+
+    nav > ul > li > a {
+        color: #EEEEEE;
+    }
+}
+
+.admin-page {
+    flex-grow: 1;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .admin-page-wrapper {
+        background-color: #2A2A2B;
+        height: 100%;
+        margin: 30px;
+    }
+    
+    .admin-footer {
+        background-color: #191919;
+        min-height: 50px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

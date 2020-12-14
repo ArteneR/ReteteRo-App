@@ -1,16 +1,28 @@
 <div class="main-component">
-    <p>Main works!</p>
+    <div class="main-nav">
+        <nav>
+            <ul>
+                <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+                <li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>
+                <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+                <li><a (click)="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <ul>
-        <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-        <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-        <li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>
-        <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
-        <li><a (click)="logout()">Logout</a></li>
-    </ul>
+    <div class="main-header">
+        <img src="assets/images/header.jpg">
+    </div>
 
-    <br/>
-    
-    <router-outlet></router-outlet>
+    <div class="main-page-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="main-footer">
+        <footer>
+            Copyright ArteneR 2020
+        </footer>
+    </div>
 </div>
