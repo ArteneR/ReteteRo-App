@@ -5,6 +5,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UtilsService {
+    constructor() { }
 
-  constructor() { }
+    public generateCopyrightText(): string {
+        let copyrightStartYear = 2020;
+        let copyrightEndYear = (new Date()).getFullYear(); 
+        return 'Copyright &copy; ' + copyrightStartYear + ( (copyrightEndYear !== copyrightStartYear) ? ' - ' + copyrightEndYear : '') + ' ArteneR';
+    }
 }
