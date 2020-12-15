@@ -7,7 +7,7 @@ import { User }             from '@app/_models/user';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.less']
+  styleUrls: ['./main.component.less', './main.component.mobile.less']
 })
 export class MainComponent {
     user: User;
