@@ -2,12 +2,12 @@
     <div class="admin-nav">
         <nav>
             <ul>
-                <li><a routerLink="/admin" routerLinkActive="active">Admin Home</a></li>
-                <li><a routerLink="/admin/login" routerLinkActive="active">Admin Login</a></li>
-                <li><a routerLink="/admin/users" routerLinkActive="active">Admin Users</a></li>
-                <li><a routerLink="/admin/recipes" routerLinkActive="active">Admin Recipes</a></li>
-                <li><a routerLink="/" routerLinkActive="active">Main</a></li>
-                <li><a (click)="logout()">Logout</a></li>
+                <li><a routerLink="/admin"         [ngClass]="{'active-page': true}"  routerLinkActive="active">Admin Home</a></li>
+                <li><a routerLink="/admin/login"   [ngClass]="{'active-page': false}" routerLinkActive="active">Admin Login</a></li>
+                <li><a routerLink="/admin/users"   [ngClass]="{'active-page': false}" routerLinkActive="active">Admin Users</a></li>
+                <li><a routerLink="/admin/recipes" [ngClass]="{'active-page': false}" routerLinkActive="active">Admin Recipes</a></li>
+                <li><a routerLink="/"              [ngClass]="{'active-page': false}" routerLinkActive="active">Main</a></li>
+                <li><a (click)="logout()"          [ngClass]="{'active-page': false}">Logout</a></li>
             </ul>
         </nav>
     </div>

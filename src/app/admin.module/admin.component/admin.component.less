@@ -17,23 +17,31 @@
 
     nav {
         margin-top: 200px;
-    }
 
-    nav > ul > li {
-        background-color: @color-admin-main-3;
-        padding: 20px;
-        border-bottom: 1px solid @color-admin-main-2;
-        padding-left: 30px;
-        cursor: pointer;
-        display: block;
+        ul {
+            li {
+                background-color: @color-admin-main-3;
+                border-bottom: 1px solid @color-admin-main-2;
+                cursor: pointer;
+                display: block;
+        
+                &:hover {
+                    background-color: @color-admin-main-2;
+                }
 
-        &:hover {
-            background-color: @color-admin-main-2;
+                a {
+                    display: block;
+                    color: #EEEEEE;
+                    text-decoration: none;
+                    padding: 15px 0px 15px 30px;
+
+                    &.active-page {
+                        border-left: 5px solid red;
+                        padding-left: 25px;
+                    }
+                }
+            }
         }
-    }
-
-    nav > ul > li > a {
-        color: #EEEEEE;
     }
 }
 
