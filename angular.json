@@ -28,10 +28,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/reset-css.less",
-              "src/styles.less"
+              "src/styles/reset-css.less",
+              "src/styles/variables.less",
+              "src/styles/styles.less"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/styles"              
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -125,6 +131,7 @@
             ],
             "styles": [
               "src/reset-css.less",
+              "src/variables.less",
               "src/styles.less"
             ],
             "scripts": []
