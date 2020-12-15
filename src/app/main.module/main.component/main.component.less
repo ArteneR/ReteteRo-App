@@ -6,58 +6,58 @@
     min-height: 1200px;
     display: flex;
     flex-direction: column;
-}
+    justify-content: space-between;
 
-.main-nav {
-    display: inline-block;
-    position: fixed;
-    right: 0;
-    top: 0;
-
-    nav > ul > li {
+    .main-nav {
         display: inline-block;
-        background-color: white;
-        padding: 20px; 
+        position: fixed;
+        right: 0;
+        top: 0;
+    
+        nav > ul > li {
+            display: inline-block;
+            background-color: white;
+            padding: 20px; 
+        }
+    
+        nav > ul > li > a {
+            color: #222222;
+        }
     }
-
-    nav > ul > li > a {
-        color: #222222;
+    
+    .main-header {
+        width: 100%;
+        max-height: 400px;
+    
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-position: top top;
+            object-position: center 0;
+        }
     }
-}
-
-.main-header {
-    width: 100%;
-    max-height: 400px;
-
-    img {
+    
+    .main-page-wrapper {
+        background-color: #FFFFFF;
+        max-width: 1024px;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        background-position: top top;
-        object-position: center 0;
+        align-self: center;
     }
-}
-
-.main-page-wrapper {
-    background-color: #FFFFFF;
-    max-width: 1024px;
-    width: 100%;
-    height: 100%;
-    align-self: center;
-}
-
-.main-footer {
-    // background-color: #1C475D;
-    background-color: @color-main-2;
-    min-height: 200px;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    footer {
-        color: #EEEEEE;
-        text-align: center;
-        margin: 20px;
+    
+    .main-footer {
+        background-color: @color-main-2;
+        min-height: 200px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    
+        footer {
+            color: #EEEEEE;
+            text-align: center;
+            margin: 20px;
+        }
     }
 }

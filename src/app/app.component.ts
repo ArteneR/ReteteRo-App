@@ -7,7 +7,7 @@ import { DataService } from '@app/_services/data.service/data.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less', './app.component.tablet.less', './app.component.mobile.less']
 })
 export class AppComponent {
     title = 'ReteteRo-App';
