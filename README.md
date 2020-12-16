@@ -13,9 +13,11 @@ Simple Angular + Laravel application for food recepies
 
 RUN Angular app:
 	ng serve
+    ng serve --host 0.0.0.0         (In order to run on your local network)
 
 Open Angular app:
 	http://localhost:4200/
+    http://<local_ip_address>:4200/
 
 
 
