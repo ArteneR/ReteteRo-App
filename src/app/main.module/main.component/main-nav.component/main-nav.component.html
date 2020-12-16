@@ -5,15 +5,15 @@
         </div>
 
         <label for="main-nav-menu-toggle" id="main-nav-menu-button">&#9776;</label>
-        <input type="checkbox" id="main-nav-menu-toggle"/>
+        <input type="checkbox" id="main-nav-menu-toggle" [checked]="isMainNavMenuOpened" (change)="toggleMainNavMenu()" />
 
         <ul id="main-nav-menu-items">
-            <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-            <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-            <li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>
-            <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
-            <li><a (click)="logout2()">Logout</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleMainNavMenu()" routerLinkActive="active" routerLink="/">Home</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleMainNavMenu()" routerLinkActive="active" routerLink="/login">Login</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleMainNavMenu()" routerLinkActive="active" routerLink="/contact">Contact</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleMainNavMenu()" routerLinkActive="active" routerLink="/recipes">Recipes</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleMainNavMenu()" routerLinkActive="active" routerLink="/admin">Admin</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="logout2()">Logout</a></li>
         </ul>
     </nav>
 </div>
