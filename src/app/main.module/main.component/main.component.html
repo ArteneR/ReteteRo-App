@@ -1,23 +1,5 @@
 <div class="main-component">
-    <div class="main-nav">
-        <nav id="main-nav-menu">
-            <div id="header-title-mobile">
-                <h1>Retete.ro</h1>
-            </div>
-
-            <label for="main-nav-menu-toggle" id="main-nav-menu-button">&#9776;</label>
-            <input type="checkbox" id="main-nav-menu-toggle"/>
-
-            <ul id="main-nav-menu-items">
-                <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-                <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-                <li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>
-                <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
-                <li><a (click)="logout()">Logout</a></li>
-            </ul>
-        </nav>
-    </div>
+    <app-main-nav></app-main-nav>
 
     <div class="main-header">
         <div id="header-title">
