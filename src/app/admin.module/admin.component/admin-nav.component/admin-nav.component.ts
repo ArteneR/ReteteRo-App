@@ -8,6 +8,7 @@ import { Component, HostListener }        from '@angular/core';
 })
 export class AdminNavComponent {
     inside = false;
+    isAdminNavMenuOpened = false;
 
 
     constructor() { }
@@ -31,7 +32,13 @@ export class AdminNavComponent {
         }
         else {
             console.log("Outside!");
+            this.isAdminNavMenuOpened = false;
         }
         this.inside = false; 
     } 
+
+
+    toggleAdminNavMenu() {
+        this.isAdminNavMenuOpened = !this.isAdminNavMenuOpened;
+    }
 }

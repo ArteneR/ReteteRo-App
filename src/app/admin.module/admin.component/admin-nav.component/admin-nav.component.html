@@ -5,15 +5,15 @@
 
     <nav id="admin-nav-menu">
         <label for="admin-nav-menu-toggle" id="admin-nav-menu-button">&#9776;</label>
-        <input type="checkbox" id="admin-nav-menu-toggle"/>
+        <input type="checkbox" id="admin-nav-menu-toggle" [checked]="isAdminNavMenuOpened" (change)="toggleAdminNavMenu()" />
 
         <ul id="admin-nav-menu-items">
-            <li><a routerLink="/admin"         [ngClass]="{'active-page': true}"  routerLinkActive="active">Admin Home</a></li>
-            <li><a routerLink="/admin/login"   [ngClass]="{'active-page': false}" routerLinkActive="active">Admin Login</a></li>
-            <li><a routerLink="/admin/users"   [ngClass]="{'active-page': false}" routerLinkActive="active">Admin Users</a></li>
-            <li><a routerLink="/admin/recipes" [ngClass]="{'active-page': false}" routerLinkActive="active">Admin Recipes</a></li>
-            <li><a routerLink="/"              [ngClass]="{'active-page': false}" routerLinkActive="active">Main</a></li>
-            <li><a (click)="logout2()"          [ngClass]="{'active-page': false}">Logout</a></li>
+            <li><a [ngClass]="{'active-page': true}"  (click)="toggleAdminNavMenu()" routerLinkActive="active" routerLink="/admin">Admin Home</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleAdminNavMenu()" routerLinkActive="active" routerLink="/admin/login">Admin Login</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleAdminNavMenu()" routerLinkActive="active" routerLink="/admin/users">Admin Users</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleAdminNavMenu()" routerLinkActive="active" routerLink="/admin/recipes">Admin Recipes</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleAdminNavMenu()" routerLinkActive="active" routerLink="/">Main</a></li>
+            <li><a [ngClass]="{'active-page': false}" (click)="toggleAdminNavMenu() && logout2()">Logout</a></li>
         </ul>
     </nav>
 </div>
