@@ -7,7 +7,7 @@ import { Component, HostListener }        from '@angular/core';
   styleUrls: ['./main-nav.component.less', './main-nav.component.mobile.less']
 })
 export class MainNavComponent {
-    inside = false;
+    clickedInsideMainNavMenu = false;
     isMainNavMenuOpened = false;
 
     constructor() { }
@@ -21,20 +21,17 @@ export class MainNavComponent {
 
     @HostListener("click") 
     clicked() {
-        this.inside = true; 
+        this.clickedInsideMainNavMenu = true; 
     } 
 
 
     @HostListener("document:click") 
     clickedOut() { 
-        if (this.inside) {
-            console.log("Inside!");
-        }
-        else {
-            console.log("Outside!");
+        if (!this.clickedInsideMainNavMenu) {
             this.isMainNavMenuOpened = false;
         }
-        this.inside = false; 
+        
+        this.clickedInsideMainNavMenu = false; 
     } 
 
 

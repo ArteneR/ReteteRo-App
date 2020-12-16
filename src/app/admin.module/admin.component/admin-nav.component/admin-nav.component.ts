@@ -7,7 +7,7 @@ import { Component, HostListener }        from '@angular/core';
   styleUrls: ['./admin-nav.component.less', './admin-nav.component.mobile.less']
 })
 export class AdminNavComponent {
-    inside = false;
+    clickedInsideAdminNavMenu = false;
     isAdminNavMenuOpened = false;
 
 
@@ -22,20 +22,17 @@ export class AdminNavComponent {
     
     @HostListener("click") 
     clicked() {
-        this.inside = true; 
+        this.clickedInsideAdminNavMenu = true; 
     } 
 
 
     @HostListener("document:click") 
     clickedOut() { 
-        if (this.inside) {
-            console.log("Inside!");
-        }
-        else {
-            console.log("Outside!");
+        if (!this.clickedInsideAdminNavMenu) {
             this.isAdminNavMenuOpened = false;
         }
-        this.inside = false; 
+        
+        this.clickedInsideAdminNavMenu = false; 
     } 
 
 
