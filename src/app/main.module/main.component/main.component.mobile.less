@@ -11,7 +11,16 @@
                 align-items: flex-end;
                 width: 100%;
 
-                label { 
+                #header-title-mobile {
+                    display: inline-block;
+                    position: absolute;
+                    top: 10px;
+                    left: 20px;
+                    font-size: 1.8em;
+                    color: white;
+                }
+
+                #main-nav-menu-button { 
                     display: inline-block; 
                     color: #EEEEEE;
                     font-style: normal;
@@ -24,16 +33,7 @@
                     }
                 }
 
-                #header-title-mobile {
-                    display: inline-block;
-                    position: absolute;
-                    top: 10px;
-                    left: 20px;
-                    font-size: 1.8em;
-                    color: white;
-                }
-
-                input:checked ~ #main-nav-menu-items { 
+                #main-nav-menu-toggle:checked ~ #main-nav-menu-items { 
                     display: block; 
                     background: rgba(26, 58, 75, 0.82); 
                 }
