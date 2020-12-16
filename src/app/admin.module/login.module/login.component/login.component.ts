@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
         ngOnInit() {
                 this.loginForm = this.formBuilder.group({
                     username: ['ArteneR', Validators.required],
-                    password: ['Amiga1200', Validators.required]
+                    password: ['', Validators.required]
                 });
 
                 this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/admin/users';
