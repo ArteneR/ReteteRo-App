@@ -1,7 +1,10 @@
 <div class="admin-component">
     <div class="admin-nav">
-        <nav>
-            <ul>
+        <nav id="admin-nav-menu">
+            <label for="admin-nav-menu-toggle" id="admin-nav-menu-button">&#9776;</label>
+            <input type="checkbox" id="admin-nav-menu-toggle"/>
+
+            <ul id="admin-nav-menu-items">
                 <li><a routerLink="/admin"         [ngClass]="{'active-page': true}"  routerLinkActive="active">Admin Home</a></li>
                 <li><a routerLink="/admin/login"   [ngClass]="{'active-page': false}" routerLinkActive="active">Admin Login</a></li>
                 <li><a routerLink="/admin/users"   [ngClass]="{'active-page': false}" routerLinkActive="active">Admin Users</a></li>

@@ -8,7 +8,7 @@ import { UtilsService }     from '@app/_services/utils.service/utils.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.less']
+  styleUrls: ['./admin.component.less', './admin.component.mobile.less']
 })
 export class AdminComponent {
     user: User;
