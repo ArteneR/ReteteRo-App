@@ -1,0 +1,58 @@
+@import "variables";
+
+
+@media all and (max-width: @screen-size-mobile-max-width) {
+    .admin-nav {
+        height: auto;
+        position: absolute;
+        min-width: 100%;
+        top: 0;
+
+        #admin-nav-logo {
+            display: none;
+        }
+
+        #admin-nav-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            margin-top: 0px;
+
+            #admin-nav-menu-button { 
+                display: inline-block; 
+                color: #EEEEEE;
+                font-style: normal;
+                font-size: 1.4em;
+                padding: 15px;
+                cursor: pointer;
+
+                &:hover {
+                    color: #FFFFFF;
+                }
+            }
+
+            #admin-nav-menu-toggle:checked ~ #admin-nav-menu-items { 
+                display: block; 
+            }
+
+            #admin-nav-menu-items {
+                display: none; 
+                width: 100%;
+
+                li {
+                    box-sizing: border-box;
+                    display: block;
+                    width: 100%;
+    
+                    a {
+                        display: block;
+                        font-size: 1.2em !important;
+                        padding: 20px;
+                        color: #EEEEEE;
+                    }
+                }
+            }
+        }
+    }
+}
