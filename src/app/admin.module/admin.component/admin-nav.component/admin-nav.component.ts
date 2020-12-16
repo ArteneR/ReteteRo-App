@@ -16,6 +16,7 @@ export class AdminNavComponent {
 
     logout2() {
         alert("Logout");
+        this.toggleAdminNavMenu();
     }
 
     
