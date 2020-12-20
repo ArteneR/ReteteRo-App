@@ -1,0 +1,152 @@
+
+
+// Recipe
+{
+    id: 123,
+    title: 'abc',
+    author_id: 123,
+    description: 'abc',
+    time: 'abc',
+    difficulty: 'abc',
+    portions: 4,
+    ingredients: [
+        {
+            quantity: 1,
+            unit: 'piece',
+            ingredient: 'ceapa galbena',
+            order: 1
+        },
+        {
+            quantity: 500,
+            unit: 'ml',
+            ingredient: 'apa',
+            order: 2
+        }
+    ],
+    preparation_method: [
+        {
+            direction: 'Se curata si se spala legumele',
+            order: 1
+        },
+        {
+            direction: 'Intr-o oala cu capacitate de ...',
+            order: 2
+        }
+    ]
+}
+
+
+// Units:
+// l, ml, cana, lingura, lingurita, g, kg, buc, 
+
+// Difficulty:
+// Usor, Mediu, Greu
+
+
+// Time:
+// 0 H and 45 mins
+// 5, 10, 15, 20, 30, 45, 60, 1 ora si 15 mins, 1 ora si 30 mins, 1 ora si 45 mins, 
+
+
+// Recipe Votes
+{
+    id: 123,
+    recipe_id: 123,
+    user_id: 123,
+    guest_id: 123,
+    vote: 5
+}
+
+
+// Recipe comments
+{
+    id: 123,
+    recipe_id: 123,
+    user_id: 123,
+    guest_id: 123,
+    comment: 'abc'
+}
+
+
+
+// Recipe views:
+{
+    id: 123,
+    recipe_id: 123,
+    user_id: 123,
+    guest_id: 123,
+}
+
+
+// Recipe images:
+{
+    id: 123,
+    recipe_id: 123,
+    image: 'abc',
+    is_cover_image: 'yes',
+    order: 3
+}
+
+
+
+// Recipe categories:
+{
+    id: 123,
+    recipe_id: 123,
+    category_id: 123
+}
+
+
+// Available recipe categories:
+{
+    id: 123,
+    category: 'Ciorbe, supe si borsuri'
+}
+
+
+// User
+{
+    id: 123,
+    username: 'abc',
+    password: '$^&',
+    email: 'abc',
+    first_name: 'abc',
+    last_name: 'abc',
+    roles: 'abc,def',
+    created_at: '',
+    updated_at: ''
+}
+
+
+// User favorite recipes
+{
+    id: 123,
+    user_id: 123,
+    recipe_id: 123
+}
+
+
+// User reset password codes
+{
+    id: 123,
+    user_id: 123,
+    code: 'abc'
+}
+
+
+
+// Pages content
+{
+    id: 123,
+    page: 'terms',
+    content: 'abc'
+}
+
+
+
+
+// Guests (Users not logged in)
+{
+    id: 123,
+    guest_key: '#%&abc' 
+}
