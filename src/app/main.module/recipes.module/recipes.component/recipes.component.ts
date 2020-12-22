@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipes.component.less']
 })
 export class RecipesComponent implements OnInit {
+  items = [1, 2, 3];
 
   constructor() { }
 

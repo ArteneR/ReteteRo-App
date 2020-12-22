@@ -1,0 +1,40 @@
+@import "variables";
+
+
+@media all and (max-width: @screen-size-mobile-max-width) {
+    .recipe-card-component {
+        flex-direction: column;
+    
+        .recipe-card-image {
+            width: 100%;
+            min-height: 200px;
+        }
+        
+        .recipe-card-info {
+        
+            .recipe-card-top {
+                flex-direction: column;
+
+                .recipe-card-title {
+                    order: 1;
+                }
+
+                .recipe-card-category {
+                    order: 0;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+            
+            .recipe-card-middle {
+            
+            }
+            
+            .recipe-card-bottom {
+                flex-direction: column;
+            }
+        }
+    }
+}
+

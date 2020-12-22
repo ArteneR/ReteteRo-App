@@ -20,7 +20,7 @@ const mainRoutes: Routes = [
         children: [
           {
             path: 'recipes',
-            canActivate: [AuthGuard],
+            // canActivate: [AuthGuard],
             loadChildren: () => import('@app/main.module/recipes.module/recipes.module').then(m => m.RecipesModule)
           },
           {

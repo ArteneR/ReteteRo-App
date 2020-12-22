@@ -22,3 +22,28 @@ body {
     color: #FFFFFF;
     font-size: 1.4em;
 }
+
+
+
+
+.__mobile-only {
+    display: initial;
+}
+
+.__desktop-only {
+    display: initial;
+}
+
+
+@media all and (max-width: @screen-size-mobile-max-width) {
+    .__desktop-only {
+        display: none;
+    }
+}
+
+
+@media all and (min-width: @screen-size-mobile-max-width) {
+    .__mobile-only {
+        display: none;
+    }
+}
