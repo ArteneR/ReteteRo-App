@@ -65,6 +65,11 @@
                     border-top-left-radius: 10px;
                     border-bottom-left-radius: 10px;
                     white-space: nowrap;
+                    font-size: @font-size-normal;
+
+                    & svg-icon * {
+                        color: #FFFFFF;
+                    }
                 }
             }
         }
@@ -111,4 +116,11 @@
             }
         }
     }
+}
+
+svg-icon * {
+    // width: 20px;
+    // height: 20px;
+    // font-size: 20px;
+    font-size: inherit;
 }

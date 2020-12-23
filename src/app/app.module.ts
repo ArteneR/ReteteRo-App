@@ -8,7 +8,7 @@ import { DataService }            from '@app/_services/data.service/data.service
 import { AppRoutingModule }       from '@app/app-routing.module';
 import { AppComponent }           from '@app/app.component';
 import { PageNotFoundComponent }  from '@app/page-not-found.component/page-not-found.component';
-
+import { AngularSvgIconModule }   from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { PageNotFoundComponent }  from '@app/page-not-found.component/page-not-f
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    CoreModule.forRoot()
+    CoreModule.forRoot(),
+    AngularSvgIconModule.forRoot()
   ],
   providers: [
     DataService

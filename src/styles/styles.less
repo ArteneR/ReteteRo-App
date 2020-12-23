@@ -17,6 +17,21 @@ body {
     color: @color-text-main;
 }
 
+strong, b { font-weight: bold; }
+
+h1 { font-size: @font-size-biggest; }
+h2 { font-size: @font-size-bigger; }
+h3 { font-size: @font-size-big; }
+h4 { font-size: @font-size-normal; }
+h5 { font-size: @font-size-small; }
+
+svg-icon * {
+    height: 1em;
+    width: 1em;
+    top: .125em;
+    position: relative;
+}
+
 .page-loading {
     display: flex;
     justify-content: center;
@@ -24,16 +39,8 @@ body {
     flex-direction: column;
     height: 100%;
     color: #FFFFFF;
-    font-size: 1.4em;
+    font-size: @font-size-normal;
 }
-
-strong, b { font-weight: bold; }
-
-h1 { font-size: 2.4em; }
-h2 { font-size: 2.0em; }
-h3 { font-size: 1.5em; }
-h4 { font-size: 1em; }
-h5 { font-size: 0.8em; }
 
 
 

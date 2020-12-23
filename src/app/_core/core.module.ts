@@ -18,7 +18,7 @@ export class CoreModule {
         return {
           ngModule: CoreModule,
           providers: [
-            { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AuthService] },
+            // { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AuthService] },
             { provide: HTTP_INTERCEPTORS, useClass: AuthJwtInterceptor, multi: true }
           ]
         };
