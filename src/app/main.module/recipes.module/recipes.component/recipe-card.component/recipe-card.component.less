@@ -1,14 +1,20 @@
+@import 'variables.less';
+
 
 .recipe-card-component {
     margin: 30px 0px;
     background-color: #FAFAFA;
     display: flex;
     flex-direction: row;
+    -webkit-box-shadow: 0px 5px 10px -4px rgba(55,55,55,0.48); 
+    box-shadow: 0px 5px 10px -4px rgba(55,55,55,0.48);
+    border-radius: 10px;
+    min-width: 300px;
 
     .recipe-card-image {
-        background-color: blue;
         width: 300px;
         height: 200px;
+        min-width: 300px;
 
         img {
             width: 100%;
@@ -16,6 +22,7 @@
             object-fit: cover;
             background-position: center center;
             object-position: center center;
+            border-radius: 10px 0 0 10px;
         }
     }
     
@@ -24,26 +31,69 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding: 20px;
     
         .recipe-card-top {
-            background-color: red;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 10px;
+            border-bottom: 1px solid black;
+
+            .recipe-card-title {
+                margin-right: 20px;
+
+                h5 {
+                    margin-top: 8px;
+                }
+            }
+
+            .recipe-card-category {
+                margin: 20px -20px 20px 0px;
+                align-self: flex-end;
+
+                & > span {
+                    background-color: @color-secondary;
+                    color: #FFFFFF;
+                    padding: 10px 20px;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    white-space: nowrap;
+                }
+            }
         }
         
         .recipe-card-middle {
-            background-color: yellow;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0 0 0;
+
+            .recipe-card-description {
+                min-width: 10px;
+                flex: 1;
+                min-width: 200px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+            }
+
+            .recipe-card-stats {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-bottom: 20px;
+            }
         }
         
         .recipe-card-bottom {
-            background-color: green;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            flex-wrap: wrap;
+            padding-top: 10px;
+            border-top: 1px solid black;
         }
     }
 }

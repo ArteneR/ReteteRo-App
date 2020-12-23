@@ -8,6 +8,10 @@
         .recipe-card-image {
             width: 100%;
             min-height: 200px;
+
+            img {
+                border-radius: 10px 10px 0 0;
+            }
         }
         
         .recipe-card-info {
@@ -24,15 +28,44 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    align-self: flex-end;
+                    width: 100%;
+                    flex-wrap: wrap;
+
+                    .recipe-card-stats {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-left: -20px;
+                    }
                 }
             }
             
             .recipe-card-middle {
-            
+
+                .recipe-card-description {
+                    margin-right: 0;
+                }
             }
             
             .recipe-card-bottom {
                 flex-direction: column;
+
+                .recipe-card-popularity {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .recipe-card-see-recipe {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 20px;
+
+                    button {
+                        width: 100%;
+                        min-height: 50px;
+                    }
+                }
             }
         }
     }

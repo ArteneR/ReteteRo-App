@@ -23,6 +23,13 @@ body {
     font-size: 1.4em;
 }
 
+strong, b { font-weight: bold; }
+
+h1 { font-size: 2.4em; }
+h2 { font-size: 2.0em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.8em; }
 
 
 
@@ -37,13 +44,13 @@ body {
 
 @media all and (max-width: @screen-size-mobile-max-width) {
     .__desktop-only {
-        display: none;
+        display: none !important;
     }
 }
 
 
 @media all and (min-width: @screen-size-mobile-max-width) {
     .__mobile-only {
-        display: none;
+        display: none !important;
     }
 }
