@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
-  styleUrls: ['./recipes.component.less']
+  styleUrls: ['./recipes.component.less', './recipes.component.mobile.less']
 })
 export class RecipesComponent implements OnInit {
   items = [1, 2, 3];
