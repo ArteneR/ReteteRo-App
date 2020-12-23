@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component }    from '@angular/core';
+
+import { UtilsService } from '@app/_services/utils.service/utils.service';
 
 
 @Component({
@@ -6,11 +8,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cheat-sheet.component.html',
   styleUrls: ['./cheat-sheet.component.less']
 })
-export class CheatSheetComponent implements OnInit {
+export class CheatSheetComponent {
+    constructor(private utilsService: UtilsService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    copyToClipboard(item) {
+        this.utilsService.copyToClipboard(item);
+    }
 }
