@@ -39,13 +39,18 @@
             justify-content: space-between;
             flex-wrap: wrap;
             padding-bottom: 10px;
-            border-bottom: 1px solid black;
+            border-bottom: 1px solid @color-grey-1;
 
             .recipe-card-title {
                 margin-right: 20px;
 
                 h5 {
                     margin-top: 8px;
+                    color: @color-text-main-3;
+
+                    & * {
+                        color: @color-text-main-3;
+                    }
                 }
             }
 
@@ -77,6 +82,8 @@
                 min-width: 200px;
                 margin-right: 20px;
                 margin-bottom: 20px;
+                color: @color-text-main-3;
+                font-weight: bold;
             }
 
             .recipe-card-stats {
@@ -84,6 +91,10 @@
                 flex-direction: column;
                 align-items: flex-end;
                 margin-bottom: 20px;
+                
+                & * {
+                    color: @color-text-main-2;
+                }
             }
         }
         
@@ -93,7 +104,11 @@
             justify-content: space-between;
             flex-wrap: wrap;
             padding-top: 10px;
-            border-top: 1px solid black;
+            border-top: 1px solid @color-grey-1;
+
+            & * {
+                color: @color-text-main-2;
+            }
         }
     }
 }
