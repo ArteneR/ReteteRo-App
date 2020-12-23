@@ -18,6 +18,7 @@ body {
 }
 
 strong, b { font-weight: bold; }
+li, a, button { cursor: pointer; }
 
 h1 { font-size: @font-size-biggest; }
 h2 { font-size: @font-size-bigger; }
@@ -38,8 +39,11 @@ svg-icon * {
     align-items: center;
     flex-direction: column;
     height: 100%;
-    color: #FFFFFF;
-    font-size: @font-size-normal;
+
+    & * {
+        color: @color-text-secondary;
+        font-size: @font-size-big;
+    }
 }
 
 

@@ -4,7 +4,7 @@
 @media all and (max-width: @screen-size-mobile-max-width) {
     .main-nav {
         #main-nav-menu {
-            background: rgba(26, 58, 75, 0.8);
+            background: fade(@color-main, 80%);
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -21,20 +21,20 @@
 
             #main-nav-menu-button { 
                 display: inline-block; 
-                color: #EEEEEE;
+                color: @color-text-secondary;
                 font-style: normal;
                 font-size: 1.4em;
                 padding: 15px;
                 cursor: pointer;
 
                 &:hover {
-                    color: #FFFFFF;
+                    color: @color-text-secondary-lighter;
                 }
             }
 
             #main-nav-menu-toggle:checked ~ #main-nav-menu-items { 
                 display: block; 
-                background: rgba(26, 58, 75, 0.82); 
+                background: fade(@color-main, 82%); 
             }
 
             #main-nav-menu-items {
@@ -45,11 +45,11 @@
                     box-sizing: border-box;
                     display: block;
                     width: 100%;
-                    border-top: 1px solid rgb(37, 74, 94);
+                    border-top: 1px solid @color-main-3;
                     padding: 0px 0px 0px 20px !important;
     
                     &:hover {
-                        background: rgba(39,133,181, 0.2);
+                        background: fade(@color-secondary, 20%);
     
                         a {
                             border-bottom-width: 0px !important;
@@ -61,7 +61,7 @@
                         display: block;
                         font-size: 1.2em !important;
                         padding: 20px;
-                        color: #EEEEEE;
+                        color: @color-text-secondary;
                     }
                 }
             }
