@@ -2,6 +2,7 @@ import { NgModule }                     from '@angular/core';
 import { Routes, Router, RouterModule } from '@angular/router';
 
 import { PageNotFoundComponent }        from '@app/page-not-found.component/page-not-found.component';
+import { CheatSheetComponent }          from '@app/_cheat-sheet.component/cheat-sheet.component';
 
 
 const debugRouting = false;
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('@app/admin.module/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'cheat-sheet',
+    component: CheatSheetComponent 
   },
   { 
     path: '**', 
