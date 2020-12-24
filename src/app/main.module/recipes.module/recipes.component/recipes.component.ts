@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RECIPES }           from '@app/_mockups/recipes.mockup';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipes.component.less', './recipes.component.mobile.less']
 })
 export class RecipesComponent implements OnInit {
-  items = [1, 2, 3];
+  recipes = RECIPES;
 
   constructor() { }
 

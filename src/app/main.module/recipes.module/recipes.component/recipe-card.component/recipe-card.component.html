@@ -1,48 +1,33 @@
 <div class="recipe-card-component">
     <div class="recipe-card-image">
-        <img src="assets/images/test-image.jpg">
+        <img src="assets/images/{{ recipe.cover_image }}">
     </div>
 
     <div class="recipe-card-info">
         <div class="recipe-card-top">
             <div class="recipe-card-title">
-                <h2>Ciorba de fasole galbena</h2>
-                <h5>Postat de: <strong>Anca E Voicu</strong></h5>
+                <h2>{{ recipe.title }}</h2>
+                <h5>Postat de: <strong><a [routerLink]="['/users', recipe.author_id]" target="_blank">{{ recipe.author }}</a></strong></h5>
             </div>
 
             <div class="recipe-card-category">
                 <div class="recipe-card-stats __mobile-only">
-                    <span>Timp: <strong>45 min</strong></span>
-                    <span>Dificultate: <strong>Medie</strong></span>
+                    <span>Timp: <strong>{{ recipe.time }}</strong></span>
+                    <span>Dificultate: <strong>{{ recipe.difficulty }}</strong></span>
                 </div>
 
                 <span>
-                    <svg-icon src="assets/icons/bookmark-regular.svg"></svg-icon>
-                    Borsuri si Ciorbe
+                    <svg-icon src="assets/icons/bookmark-regular.svg"></svg-icon> {{ recipe.category }}
                 </span>
             </div>
         </div>
 
         <div class="recipe-card-middle">
-            <p class="recipe-card-description">
-                Description blah blah Description
-                 aaAAsdfkjhsdfj dsfn jsdbkf 
-                  Description aaAAsdfkjhsdfj 
-                  dsfn jsdbkf Description aaA
-                  Asdfkjhsdfj dsfn jsdbkf Desc
-                  ription aaAAsdf
-                  kjhsdfj dsfn jsdbkf<br/>
-                Description aaAAsdfkjhsdfj dsfn jsdbkf <br/>
-                sdkfsdufskdfhg <br/>
-                sdkfsdufskdfhg <br/>
-                sdkfsdufskdfhg <br/>
-                sdkfsdufskdfhg <br/>
-                sfisdfh usdbf judsb fjksdbf
-            </p>
+            <p class="recipe-card-description">{{ recipe.description }}</p>
 
             <div class="recipe-card-stats __desktop-only">
-                <span>Timp: <strong>45 min</strong></span>
-                <span>Dificultate: <strong>Medie</strong></span>
+                <span>Timp: <strong>{{ recipe.time }}</strong></span>
+                <span>Dificultate: <strong>{{ recipe.difficulty }}</strong></span>
             </div>
         </div>
 
@@ -54,21 +39,20 @@
                     <svg-icon src="assets/icons/star-solid.svg"></svg-icon>
                     <svg-icon src="assets/icons/star-solid.svg"></svg-icon>
                     <svg-icon src="assets/icons/star-regular.svg"></svg-icon>
+                    {{ recipe.rating }}
                 </div>
 
                 <div class="recipe-card-votes">
-                    15 voturi
+                    {{ recipe.votes }} {{ (recipe.votes === 1) ? 'vot' : 'voturi' }}
                 </div>
 
                 <div class="recipe-card-comments">
-                    5 comentarii
+                    {{ recipe.comments }} {{ (recipe.comments === 1) ? 'comentariu' : 'comentarii' }}
                 </div>
             </div>
 
             <div class="recipe-card-see-recipe">
-                <button>
-                    See Recipe
-                </button>
+                <button [routerLink]="['/recipes', recipe.id]">See Recipe</button>
             </div>
         </div>
     </div>
