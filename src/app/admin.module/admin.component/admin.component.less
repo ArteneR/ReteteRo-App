@@ -3,12 +3,15 @@
 
 .admin-component {
     background-color: @color-admin-main;
-    color: @color-text-secondary;
     height: 100%;
     min-height: 1200px;
     display: flex;
     flex-direction: row;
     position: relative;
+
+    & * {
+        color: @color-admin-text-main;
+    }
 
     .admin-page {
         margin-top: 100px;
@@ -18,13 +21,13 @@
         flex-grow: 1;
     
         .admin-page-wrapper {
-            background-color: @color-admin-main-2;
+            background-color: @color-admin-main-lighter;
             height: 100%;
             margin: 30px;
         }
         
         .admin-footer {
-            background-color: @color-admin-main-4;
+            background-color: @color-admin-main-darker;
             min-height: 50px;
             margin-top: 50px;
             display: flex;
