@@ -3,11 +3,11 @@
 
 .recipe-card-component {
     margin: 30px 0px;
-    background-color: @color-page-main-darker;
+    background-color: @color-page-main;
     display: flex;
     flex-direction: row;
-    -webkit-box-shadow: 0px 5px 10px -4px fade(@color-grey-2, 48%); 
-    box-shadow: 0px 5px 10px -4px fade(@color-grey-2, 48%);
+    -webkit-box-shadow: 0px 5px 10px -4px fade(@color-dark-grey-lighter, 48%); 
+    box-shadow: 0px 5px 10px -4px fade(@color-dark-grey-lighter, 48%);
     border-radius: 10px;
     min-width: 300px;
 
@@ -39,17 +39,17 @@
             justify-content: space-between;
             flex-wrap: wrap;
             padding-bottom: 10px;
-            border-bottom: 1px solid @color-grey-1;
+            border-bottom: 1px solid @color-white-darker;
 
             .recipe-card-title {
                 margin-right: 20px;
 
                 h5 {
                     margin-top: 8px;
-                    color: @color-text-main-3;
+                    color: @color-text-grey;
 
                     & * {
-                        color: @color-text-main-3;
+                        color: @color-text-grey;
                     }
                 }
             }
@@ -87,7 +87,7 @@
                 min-width: 200px;
                 margin-right: 20px;
                 margin-bottom: 20px;
-                color: @color-text-main-3;
+                color: @color-text-grey-lighter;
                 font-weight: bold;
             }
 
@@ -98,7 +98,7 @@
                 margin-bottom: 20px;
                 
                 & * {
-                    color: @color-text-main-2;
+                    color: @color-text-grey;
                 }
             }
         }
@@ -109,10 +109,10 @@
             justify-content: space-between;
             flex-wrap: wrap;
             padding-top: 10px;
-            border-top: 1px solid @color-grey-1;
+            border-top: 1px solid @color-white-darker;
 
             & * {
-                color: @color-text-main-2;
+                color: @color-text-grey;
             }
         }
     }
