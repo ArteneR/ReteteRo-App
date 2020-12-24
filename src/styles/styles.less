@@ -26,6 +26,9 @@ h3 { font-size: @font-size-big; }
 h4 { font-size: @font-size-normal; }
 h5 { font-size: @font-size-small; }
 
+
+
+/* SVG icons */
 svg-icon * {
     height: 1em;
     width: 1em;
@@ -33,6 +36,9 @@ svg-icon * {
     position: relative;
 }
 
+
+
+/* Page Loading */
 .page-loading {
     display: flex;
     justify-content: center;
@@ -46,7 +52,16 @@ svg-icon * {
     }
 }
 
-button {
+
+
+/* Buttons */
+.btn {
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn-primary {
     background-color: @color-tertiary;
     color: @color-text-secondary;
     border-width: 0;
@@ -56,14 +71,11 @@ button {
     &:hover {
         background-color: @color-tertiary-darker;
     }
-
-    &:focus {
-        outline: none;
-    }
 }
 
 
 
+/* Mobile & Desktop show/hide */
 .__mobile-only {
     display: initial;
 }
