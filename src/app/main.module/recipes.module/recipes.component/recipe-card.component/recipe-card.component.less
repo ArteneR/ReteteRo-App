@@ -114,6 +114,25 @@
             & * {
                 color: @color-text-grey;
             }
+
+            .recipe-card-popularity {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+
+                div {
+                    margin-right: 20px;
+                    line-height: 2em;
+                    font-weight: bold;
+                    color: @color-text-grey-lighter;
+                    white-space: nowrap;
+                }
+
+                .recipe-card-stars * {
+                    color: @color-secondary;
+                }
+            }
         }
     }
 }
