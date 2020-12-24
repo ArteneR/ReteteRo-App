@@ -47,7 +47,19 @@ svg-icon * {
 }
 
 button {
-    // background-color: red;
+    background-color: @color-tertiary;
+    color: @color-text-secondary;
+    border-width: 0;
+    border-radius: 5px;
+    padding: 10px 50px;
+
+    &:hover {
+        background-color: @color-tertiary-darker;
+    }
+
+    &:focus {
+        outline: none;
+    }
 }
 
 
