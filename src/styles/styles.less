@@ -27,6 +27,19 @@ h4 { font-size: @font-size-normal; }
 h5 { font-size: @font-size-small; }
 
 
+.section-title {
+    border-bottom: 1px solid @color-white-darker;
+    margin: 60px 0;
+
+    & * {
+        display: inline-block;
+        border-bottom: 4px solid @color-secondary;
+        padding-bottom: 8px;
+        color: @color-text-main;
+    }
+}
+
+
 
 /* SVG icons */
 svg-icon * {
