@@ -1,0 +1,10 @@
+<h2>Colors</h2>
+
+<div class="colors">
+    <div *ngFor="let colors_set of colors">
+        <div *ngFor="let color of colors_set" [ngClass]="color">
+            <span>{{ color }}</span>
+            <button (click)="copyToClipboard('@' + color)">Copy</button>
+        </div>
+    </div>
+</div>

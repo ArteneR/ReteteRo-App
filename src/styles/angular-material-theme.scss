@@ -1,0 +1,98 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+
+/* Main Theme */
+
+$turcoaz-palette: (
+  50: #e2f5f8,
+  100: #b7e6ee,
+  200: #8ad5e5,
+  300: #64c4db,
+  400: #4cb8d7,
+  500: #39acd3,
+  600: #309ec5,
+  700: #268cb3,
+  800: #237ba0,
+  900: #185b7f,
+  A100: #b7e6ee,
+  A200: #8ad5e5,
+  A400: #4cb8d7,
+  A700: #268cb3,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: $white-87-opacity,
+  )
+);
+
+
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$main-theme-primary: mat-palette($turcoaz-palette, 800, 600, 900);
+$main-theme-accent:  mat-palette($turcoaz-palette, 500, 900, A100);
+$main-theme-warn:    mat-palette($turcoaz-palette);
+
+$main-theme: mat-light-theme($main-theme-primary, $main-theme-accent, $main-theme-warn);
+
+@include angular-material-theme($main-theme);
+
+
+
+
+/* Secondary Theme */
+
+$pink-red-palette: (
+  50: #ffecef,
+  100: #ffced4,
+  200:#ff9b9a,
+  300: #ff7272,
+  400: #ff4d4b,
+  500: #ff3a2d,
+  600: #ff302f,
+  700: #ef2329,
+  800: #e21a22,
+  900: #d20414,
+  A100: #ffced4,
+  A200: #ff9b9a,
+  A400: #ff4d4b,
+  A700: #ef2329,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: $white-87-opacity,
+  )
+);
+
+.secondary-theme {
+    // mat-palette accepts $palette-name, main, lighter and darker variants
+    $secondary-theme-primary: mat-palette($pink-red-palette, 300, 100, 700);
+    $secondary-theme-accent: mat-palette($pink-red-palette, 400);
+    $secondary-theme-warn: mat-palette($pink-red-palette);
+  
+    $secondary-theme: mat-light-theme($secondary-theme-primary, $secondary-theme-accent, $secondary-theme-warn);
+  
+    @include angular-material-theme($secondary-theme);
+  }

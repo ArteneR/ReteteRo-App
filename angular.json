@@ -29,13 +29,14 @@
             ],
             "styles": [
               "src/styles/reset-css.less",
+              "src/styles/angular-material-theme.scss",
               "src/styles/variables.less",
               "src/styles/styles.less"
             ],
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "./src/styles"              
+                "./src/styles"
               ]
             }
           },
@@ -131,6 +132,7 @@
             ],
             "styles": [
               "src/reset-css.less",
+              "src/styles/angular-material-theme.scss",
               "src/variables.less",
               "src/styles.less"
             ],
@@ -166,6 +168,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ReteteRo-App"
 }
