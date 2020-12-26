@@ -34,12 +34,7 @@
         <div class="recipe-card-bottom">
             <div class="recipe-card-popularity">
                 <div class="recipe-card-stars">
-                    <svg-icon src="assets/icons/star-solid.svg"></svg-icon>
-                    <svg-icon src="assets/icons/star-solid.svg"></svg-icon>
-                    <svg-icon src="assets/icons/star-solid.svg"></svg-icon>
-                    <svg-icon src="assets/icons/star-solid.svg"></svg-icon>
-                    <svg-icon src="assets/icons/star-regular.svg"></svg-icon>
-                    {{ recipe.rating }}
+                    <svg-icon *ngFor="let star of totalStars; let i = index;" src="assets/icons/{{ (i < recipe.rating) ? 'star-solid.svg' : 'star-regular.svg'}}"></svg-icon>
                 </div>
 
                 <div class="recipe-card-votes">

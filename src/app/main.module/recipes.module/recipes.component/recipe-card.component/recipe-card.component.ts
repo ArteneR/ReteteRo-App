@@ -9,6 +9,8 @@ import { Recipe }                   from '@app/_models/recipe';
 })
 export class RecipeCardComponent implements OnInit {
   @Input() recipe: Recipe;
+  totalStars = Array(5);
+
 
   constructor() { }
 
