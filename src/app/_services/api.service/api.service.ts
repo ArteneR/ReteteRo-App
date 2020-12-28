@@ -1,10 +1,11 @@
-import { Injectable }           from '@angular/core';
-import { HttpClient }           from '@angular/common/http';
-import { Observable, of }       from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { Injectable }              from '@angular/core';
+import { HttpClient }              from '@angular/common/http';
+import { Observable, of }          from 'rxjs';
+import { catchError, map, tap }    from 'rxjs/operators';
 
-import { environment }          from '@environments/environment';
-import { Recipe }               from '@app/_models/recipe';
+import { environment }             from '@environments/environment';
+import { AvailableRecipeCategory } from '@app/_models/available-recipe-category';
+import { Recipe }                  from '@app/_models/recipe';
 
 
 const API_URL = environment.apiUrl;
@@ -25,7 +26,7 @@ export class ApiService {
                             .get<Recipe[]>(API_URL + '/recipes')
                             .pipe(
                                 map((res: any) => res.data),
-                                tap(recipes => console.log('Fetched all recipes: ', recipes)),
+                                tap(recipes => console.log('Fetched all Recipes: ', recipes)),
                                 catchError(this.handleError<Recipe[]>('getAllRecipes', []))
                             );
         }
@@ -58,6 +59,18 @@ export class ApiService {
         /********************  Users  ********************/
 
 
+
+        /********************  Available Recipe Categories  ********************/
+
+        public getAllAvailableRecipeCategories(): Observable<AvailableRecipeCategory[]> {
+                return this.httpClient
+                        .get<AvailableRecipeCategory[]>(API_URL + '/available-recipe-categories')
+                        .pipe(
+                            map((res: any) => res.data),
+                            tap(categories => console.log('Fetched all Available Recipe Categories: ', categories)),
+                            catchError(this.handleError<AvailableRecipeCategory[]>('getAllAvailableRecipeCategories', []))
+                        );
+        }
 
 
 

@@ -4,5 +4,5 @@
         <h2>Cele mai populare retete</h2>
     </div>
 
-    <app-recipe-card [recipe]="recipe" *ngFor="let recipe of recipes"></app-recipe-card>
+    <app-recipe-card [recipe]="recipe" [availableRecipeCategories]="availableRecipeCategories" *ngFor="let recipe of recipes"></app-recipe-card>
 </div>

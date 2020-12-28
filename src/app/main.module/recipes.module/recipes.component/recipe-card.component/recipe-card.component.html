@@ -16,9 +16,13 @@
                     <span>Dificultate: <strong>{{ recipe.difficulty }}</strong></span>
                 </div>
 
-                <span>
-                    <svg-icon src="assets/icons/bookmark-regular.svg"></svg-icon> {{ recipe.category }}
-                </span>
+                <div class="recipe-card-category-inner">
+                    <svg-icon src="assets/icons/bookmark-regular.svg"></svg-icon> 
+
+                    <div *ngFor="let availableRecipeCategory of availableRecipeCategories">
+                        <span *ngIf="availableRecipeCategory.id === recipe.category">{{ availableRecipeCategory.category }}</span>
+                    </div>
+                </div>
             </div>
         </div>
 
