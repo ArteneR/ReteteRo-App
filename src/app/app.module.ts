@@ -7,7 +7,6 @@ import { BrowserAnimationsModule }       from '@angular/platform-browser/animati
 import { AngularSvgIconModule }          from 'angular-svg-icon';
 import { CoreModule }                    from '@app/_core/core.module';
 import { AngularMaterialModule }         from '@app/_core/angular-material.module.ts';
-import { DataService }                   from '@app/_services/data.service/data.service';
 import { CheatSheetComponent }           from '@app/_cheat-sheet.component/cheat-sheet.component';
 import { ColorsComponent }               from '@app/_cheat-sheet.component/colors.component/colors.component';
 import { AngularMaterialThemeComponent } from '@app/_cheat-sheet.component/angular-material-theme.component/angular-material-theme.component';
@@ -35,7 +34,6 @@ import { PageNotFoundComponent }         from '@app/page-not-found.component/pag
     AngularMaterialModule
   ],
   providers: [
-    DataService
   ],
   bootstrap: [
     AppComponent
