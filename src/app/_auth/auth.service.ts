@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable }  from 'rxjs';
 import { map }                          from 'rxjs/operators';
 
 import { environment }                  from '@environments/environment';
+import { ApiService }                   from '@app/_services/api.service/api.service';
 import { User }                         from '@app/_models/user';
 
 
@@ -17,22 +18,23 @@ export class AuthService {
         public  user: Observable<User>;
 
 
-        constructor(private httpClient: HttpClient, private router: Router) {
+        constructor(private httpClient: HttpClient, private router: Router, private apiService: ApiService) {
                 this.userSubject = new BehaviorSubject<User>(null);
                 this.user = this.userSubject.asObservable();
         }
 
 
-        login(username: string, password: string) {
-                return this.httpClient.post<any>(`${environment.apiUrl}/auth/login`, { username, password }, { withCredentials: false })
-                        .pipe(map(response => {
-                                let user = response && response.data;
-                                this.userSubject.next(user);
-                                this.saveUserMetadata(user);
-                                this.saveAccessToken();
-                                this.startRefreshTokenTimer();
-                                return user;
-                        }));
+        login(username: string, password: string): Observable<any> {
+                return this.apiService.authLogin(username, password)
+                        .pipe(
+                                map(user => {
+                                        this.userSubject.next(user);
+                                        this.saveUserMetadata(user);
+                                        this.saveAccessToken();
+                                        this.startRefreshTokenTimer();
+                                        return user;
+                                })
+                        );
         }
 
 

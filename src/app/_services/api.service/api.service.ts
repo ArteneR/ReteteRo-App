@@ -56,6 +56,19 @@ export class ApiService {
         }
 
 
+        /********************  Auth  ********************/
+
+        public authLogin(username, password): Observable<any> {
+                return this.httpClient
+                            .post<any>(API_URL + '/auth/login', { username, password }, { withCredentials: false })
+                            .pipe(
+                                map((res: any) => res.data),
+                                tap(response => console.log('Response from auth/login: ', response)),
+                                catchError(this.handleError<Recipe[]>('authLogin', []))
+                            );
+        }
+
+        
         /********************  Users  ********************/
 
 
