@@ -39,7 +39,7 @@ export class AuthService {
 
 
         logout() {
-                this.httpClient.post<any>(`${environment.apiUrl}/auth/logout`, {}, { withCredentials: false }).subscribe();
+                this.apiService.authLogout();
                 this.userSubject.next(null);
                 this.stopRefreshTokenTimer();
                 this.removeAccessToken();
@@ -49,19 +49,22 @@ export class AuthService {
 
 
         refreshToken() {
-                return this.httpClient.post<any>(`${environment.apiUrl}/auth/refresh-token`, {}, { withCredentials: false })
-                        .pipe(map((response) => {
-                                if (response && (response.status == 'fail')) {
-                                        this.removeAccessToken();
-                                        return null;
-                                }
-                                let user = response && response.data;
-                                this.userSubject.next(user);
-                                this.saveUserMetadata(user);
-                                this.saveAccessToken();
-                                this.startRefreshTokenTimer();
-                                return user;
-                        }));
+                return this.apiService.authRefreshToken()
+                        .pipe(
+                                map(user => {
+                                        this.userSubject.next(user);
+                                        this.saveUserMetadata(user);
+                                        this.saveAccessToken();
+                                        this.startRefreshTokenTimer();
+                                        return user;
+                                })
+                        );
+
+                        // TODO:
+                        //     if (response && (response.status == 'fail')) {
+                        //         this.removeAccessToken();
+                        //         return null;
+                        // }
         }
 
 

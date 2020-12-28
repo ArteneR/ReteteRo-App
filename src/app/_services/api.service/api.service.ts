@@ -25,7 +25,7 @@ export class ApiService {
                 return this.httpClient
                             .get<Recipe[]>(API_URL + '/recipes')
                             .pipe(
-                                map((res: any) => res.data),
+                                map((response: any) => response.data),
                                 tap(recipes => console.log('Fetched all Recipes: ', recipes)),
                                 catchError(this.handleError<Recipe[]>('getAllRecipes', []))
                             );
@@ -62,13 +62,37 @@ export class ApiService {
                 return this.httpClient
                             .post<any>(API_URL + '/auth/login', { username, password }, { withCredentials: false })
                             .pipe(
-                                map((res: any) => res.data),
+                                map((response: any) => response.data),
                                 tap(response => console.log('Response from auth/login: ', response)),
-                                catchError(this.handleError<Recipe[]>('authLogin', []))
+                                catchError(this.handleError<any>('authLogin', []))
                             );
         }
 
-        
+
+        public authLogout() {
+                this.httpClient
+                    .post<any>(API_URL + '/auth/logout', {}, { withCredentials: false })
+                    .subscribe();
+        }
+
+
+        public authRefreshToken() {
+                return this.httpClient
+                            .post<any>(API_URL + '/auth/refresh-token', {}, { withCredentials: false })
+                            .pipe(
+                                map((response: any) => response.data),
+                                tap(response => console.log('Response from refresh-token: ', response)),
+                                catchError(this.handleError<any>('authRefreshToken', []))
+                            );
+
+                        // TODO:
+                        //     if (response && (response.status == 'fail')) {
+                        //         this.removeAccessToken();
+                        //         return null;
+                        // }
+        }
+
+
         /********************  Users  ********************/
 
 
