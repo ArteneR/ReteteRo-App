@@ -6,6 +6,7 @@ import { catchError, map, tap }    from 'rxjs/operators';
 import { environment }             from '@environments/environment';
 import { AvailableRecipeCategory } from '@app/_models/available-recipe-category';
 import { Recipe }                  from '@app/_models/recipe';
+import { User }                    from '@app/_models/user';
 
 
 const API_URL = environment.apiUrl;
@@ -58,6 +59,7 @@ export class ApiService {
 
         /********************  Auth  ********************/
 
+        // API: POST /auth/login
         public authLogin(username, password): Observable<any> {
                 return this.httpClient
                             .post<any>(API_URL + '/auth/login', { username, password }, { withCredentials: false })
@@ -69,6 +71,7 @@ export class ApiService {
         }
 
 
+        // API: POST /auth/logout
         public authLogout() {
                 this.httpClient
                     .post<any>(API_URL + '/auth/logout', {}, { withCredentials: false })
@@ -76,6 +79,7 @@ export class ApiService {
         }
 
 
+        // API: POST /auth/refresh-token
         public authRefreshToken() {
                 return this.httpClient
                             .post<any>(API_URL + '/auth/refresh-token', {}, { withCredentials: false })
@@ -95,6 +99,16 @@ export class ApiService {
 
         /********************  Users  ********************/
 
+        // API: GET /users
+        public getAllUsers(): Observable<User[]> {
+                return this.httpClient
+                            .get<User[]>(API_URL + '/users')
+                            .pipe(
+                                map((response: any) => response.data),
+                                tap(users => console.log('Fetched all Users: ', users)),
+                                catchError(this.handleError<User[]>('getAllUsers', []))
+                            );
+        }
 
 
         /********************  Available Recipe Categories  ********************/

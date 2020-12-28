@@ -2,7 +2,7 @@ import { Component, OnInit }  from '@angular/core';
 import { first }              from 'rxjs/operators';
 
 import { User }               from '@app/_models/user';
-import { UserService }        from '@app/_services/user.service';
+import { ApiService }         from '@app/_services/api.service/api.service';
 
 
 @Component({
@@ -14,16 +14,17 @@ export class UsersComponent implements OnInit {
         loading = false;
         users: User[];
 
-        constructor(private userService: UserService) { }
+        constructor(private apiService: ApiService) { }
+
 
         ngOnInit() {
                 this.loading = true;
                 
-                this.userService.getAll().pipe(first()).subscribe(response => {
-                    this.loading = false;
-                    if (response && response.data) {
-                        this.users = response.data;
-                    } 
-                });
+                this.apiService.getAllUsers()
+                    .pipe(first())
+                    .subscribe(
+                        users => this.users = users, 
+                        error => console.log("ERROR: ", error)
+                    );
         }
 }
