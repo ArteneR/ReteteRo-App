@@ -9,6 +9,10 @@ const forgotPasswordRoutes: Routes = [
   {
     path: '',
     component: ForgotPasswordComponent
+  },
+  {
+    path: 'reset-password',
+    loadChildren: () => import('@app/main.module/forgot-password.module/reset-password.module/reset-password.module').then(m => m.ResetPasswordModule)
   }
 ];
 
