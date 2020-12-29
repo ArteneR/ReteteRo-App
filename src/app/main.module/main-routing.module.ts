@@ -16,18 +16,37 @@ const mainRoutes: Routes = [
         loadChildren: () => import('@app/main.module/login.module/login.module').then(m => m.LoginModule)
       },
       {
-        path: '',
-        children: [
-          {
-            path: 'recipes',
-            // canActivate: [AuthGuard],
-            loadChildren: () => import('@app/main.module/recipes.module/recipes.module').then(m => m.RecipesModule)
-          },
-          {
-            path: 'contact',
-            loadChildren: () => import('@app/main.module/contact.module/contact.module').then(m => m.ContactModule)
-          }
-        ]
+        path: 'register',
+        loadChildren: () => import('@app/main.module/register.module/register.module').then(m => m.RegisterModule)
+      },
+      {
+        path: 'forgot-password',
+        loadChildren: () => import('@app/main.module/forgot-password.module/forgot-password.module').then(m => m.ForgotPasswordModule)
+      },
+      {
+        path: 'contact',
+        loadChildren: () => import('@app/main.module/contact.module/contact.module').then(m => m.ContactModule)
+      },
+      {
+        path: 'privacy-policy',
+        loadChildren: () => import('@app/main.module/privacy-policy.module/privacy-policy.module').then(m => m.PrivacyPolicyModule)
+      },
+      {
+        path: 'terms-and-conditions',
+        loadChildren: () => import('@app/main.module/terms-and-conditions.module/terms-and-conditions.module').then(m => m.TermsAndConditionsModule)
+      },
+      {
+        path: 'recipes',
+        // canActivate: [AuthGuard],
+        loadChildren: () => import('@app/main.module/recipes.module/recipes.module').then(m => m.RecipesModule)
+      },
+      {
+        path: 'categories',
+        loadChildren: () => import('@app/main.module/categories.module/categories.module').then(m => m.CategoriesModule)
+      },
+      {
+        path: 'users',
+        loadChildren: () => import('@app/main.module/users.module/users.module').then(m => m.UsersModule)
       }
     ]
   }
