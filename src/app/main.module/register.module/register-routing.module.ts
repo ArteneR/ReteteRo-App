@@ -2,7 +2,7 @@ import { NgModule }             from '@angular/core';
 import { CommonModule }         from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RegisterComponent }     from '@app/main.module/register.module/register.component/register.component';
+import { RegisterComponent }    from '@app/main.module/register.module/register.component/register.component';
 
 
 const registerRoutes: Routes = [

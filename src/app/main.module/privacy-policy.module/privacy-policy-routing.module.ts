@@ -1,8 +1,8 @@
-import { NgModule }             from '@angular/core';
-import { CommonModule }         from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule }               from '@angular/core';
+import { CommonModule }           from '@angular/common';
+import { RouterModule, Routes }   from '@angular/router';
 
-import { PrivacyPolicyComponent }     from '@app/main.module/privacy-policy.module/privacy-policy.component/privacy-policy.component';
+import { PrivacyPolicyComponent } from '@app/main.module/privacy-policy.module/privacy-policy.component/privacy-policy.component';
 
 
 const privacyPolicyRoutes: Routes = [

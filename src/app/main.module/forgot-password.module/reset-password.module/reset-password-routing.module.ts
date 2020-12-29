@@ -1,8 +1,8 @@
-import { NgModule }             from '@angular/core';
-import { CommonModule }         from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule }               from '@angular/core';
+import { CommonModule }           from '@angular/common';
+import { RouterModule, Routes }   from '@angular/router';
 
-import { ResetPasswordComponent }     from '@app/main.module/forgot-password.module/reset-password.module/reset-password.component/reset-password.component';
+import { ResetPasswordComponent } from '@app/main.module/forgot-password.module/reset-password.module/reset-password.component/reset-password.component';
 
 
 const resetPasswordRoutes: Routes = [
