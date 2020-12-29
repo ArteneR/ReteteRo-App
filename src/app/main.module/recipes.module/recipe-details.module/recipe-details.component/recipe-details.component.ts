@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }      from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-details.component.less']
 })
 export class RecipeDetailsComponent implements OnInit {
+    recipeId: number = null;
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+    constructor(private route: ActivatedRoute) { }
 
+
+    ngOnInit(): void {
+        this.recipeId = Number(this.route.snapshot.paramMap.get('id'));
+    }
 }
