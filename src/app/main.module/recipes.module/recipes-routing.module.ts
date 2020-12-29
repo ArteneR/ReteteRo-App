@@ -9,6 +9,18 @@ const recipesRoutes: Routes = [
   {
     path: '',
     component: RecipesComponent
+  },
+  {
+    path: 'details/:id',
+    loadChildren: () => import('@app/main.module/recipes.module/recipe-details.module/recipe-details.module').then(m => m.RecipeDetailsModule)
+  },
+  {
+    path: 'add',
+    loadChildren: () => import('@app/main.module/recipes.module/recipe-add.module/recipe-add.module').then(m => m.RecipeAddModule)
+  },
+  {
+    path: 'edit/:id',
+    loadChildren: () => import('@app/main.module/recipes.module/recipe-edit.module/recipe-edit.module').then(m => m.RecipeEditModule)
   }
 ];
 
