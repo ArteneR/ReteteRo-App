@@ -15,6 +15,14 @@ const mainRoutes: Routes = [
     },
     children: [
       {
+        path: '',
+        redirectTo:'/recipes', 
+        pathMatch: 'full',
+        data: {
+          breadcrumb: null
+        }
+      },
+      {
         path: 'login',
         loadChildren: () => import('@app/main.module/login.module/login.module').then(m => m.LoginModule),
         data: {
