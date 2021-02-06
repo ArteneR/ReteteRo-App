@@ -8,7 +8,10 @@ import { RecipeDetailsComponent } from '@app/main.module/recipes.module/recipe-d
 const recipeDetailsRoutes: Routes = [
   {
     path: '',
-    component: RecipeDetailsComponent
+    component: RecipeDetailsComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

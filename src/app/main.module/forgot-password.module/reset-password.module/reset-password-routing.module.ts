@@ -8,7 +8,10 @@ import { ResetPasswordComponent } from '@app/main.module/forgot-password.module/
 const resetPasswordRoutes: Routes = [
   {
     path: '',
-    component: ResetPasswordComponent
+    component: ResetPasswordComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

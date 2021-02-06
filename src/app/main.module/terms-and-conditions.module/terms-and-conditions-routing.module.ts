@@ -8,7 +8,10 @@ import { TermsAndConditionsComponent } from '@app/main.module/terms-and-conditio
 const termsAndConditionsRoutes: Routes = [
   {
     path: '',
-    component: TermsAndConditionsComponent
+    component: TermsAndConditionsComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

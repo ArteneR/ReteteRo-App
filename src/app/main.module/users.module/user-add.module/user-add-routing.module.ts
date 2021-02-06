@@ -8,7 +8,10 @@ import { UserAddComponent }     from '@app/main.module/users.module/user-add.mod
 const userAddRoutes: Routes = [
   {
     path: '',
-    component: UserAddComponent
+    component: UserAddComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

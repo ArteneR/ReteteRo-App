@@ -8,7 +8,10 @@ import { CategoriesComponent }  from '@app/main.module/categories.module/categor
 const categoriesRoutes: Routes = [
   {
     path: '',
-    component: CategoriesComponent
+    component: CategoriesComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

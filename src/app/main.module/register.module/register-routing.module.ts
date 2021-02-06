@@ -8,7 +8,10 @@ import { RegisterComponent }    from '@app/main.module/register.module/register.
 const registerRoutes: Routes = [
   {
     path: '',
-    component: RegisterComponent
+    component: RegisterComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

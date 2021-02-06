@@ -8,7 +8,10 @@ import { UserEditComponent }    from '@app/main.module/users.module/user-edit.mo
 const userEditRoutes: Routes = [
   {
     path: '',
-    component: UserEditComponent
+    component: UserEditComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

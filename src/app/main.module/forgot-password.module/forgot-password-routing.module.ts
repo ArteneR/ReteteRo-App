@@ -8,11 +8,17 @@ import { ForgotPasswordComponent } from '@app/main.module/forgot-password.module
 const forgotPasswordRoutes: Routes = [
   {
     path: '',
-    component: ForgotPasswordComponent
+    component: ForgotPasswordComponent,
+    data: {
+      breadcrumb: null
+    }
   },
   {
     path: 'reset-password',
-    loadChildren: () => import('@app/main.module/forgot-password.module/reset-password.module/reset-password.module').then(m => m.ResetPasswordModule)
+    loadChildren: () => import('@app/main.module/forgot-password.module/reset-password.module/reset-password.module').then(m => m.ResetPasswordModule),
+    data: {
+      breadcrumb: 'Reset Password'
+    }
   }
 ];
 

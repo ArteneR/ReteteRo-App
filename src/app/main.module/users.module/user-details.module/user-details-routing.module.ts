@@ -8,7 +8,10 @@ import { UserDetailsComponent } from '@app/main.module/users.module/user-details
 const userDetailsRoutes: Routes = [
   {
     path: '',
-    component: UserDetailsComponent
+    component: UserDetailsComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

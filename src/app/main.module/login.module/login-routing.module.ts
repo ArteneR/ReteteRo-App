@@ -8,7 +8,10 @@ import { LoginComponent }       from '@app/main.module/login.module/login.compon
 const loginRoutes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: LoginComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

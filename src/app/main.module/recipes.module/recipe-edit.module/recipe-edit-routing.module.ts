@@ -8,7 +8,10 @@ import { RecipeEditComponent }  from '@app/main.module/recipes.module/recipe-edi
 const recipeEditRoutes: Routes = [
   {
     path: '',
-    component: RecipeEditComponent
+    component: RecipeEditComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

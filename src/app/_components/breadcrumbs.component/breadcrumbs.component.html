@@ -1,0 +1,13 @@
+<div class="breadcrumbs-component">
+    <button class="breadcrumbs-back" (click)="goBack()">Inapoi</button>
+
+    <div class="breadcrumbs-path">
+        <button class="breadcrumbs-home" [routerLink]="[home.url]">
+            {{ home.label }}
+        </button>
+
+        <button class="breadcrumbs-location" *ngFor="let menuItem of menuItems" [routerLink]="[menuItem.url]">
+            {{ menuItem.label }}
+        </button>
+    </div>
+</div>

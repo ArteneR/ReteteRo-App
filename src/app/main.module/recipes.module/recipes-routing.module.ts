@@ -8,19 +8,31 @@ import { RecipesComponent }     from '@app/main.module/recipes.module/recipes.co
 const recipesRoutes: Routes = [
   {
     path: '',
-    component: RecipesComponent
+    component: RecipesComponent,
+    data: {
+      breadcrumb: null
+    }
   },
   {
     path: 'details/:id',
-    loadChildren: () => import('@app/main.module/recipes.module/recipe-details.module/recipe-details.module').then(m => m.RecipeDetailsModule)
+    loadChildren: () => import('@app/main.module/recipes.module/recipe-details.module/recipe-details.module').then(m => m.RecipeDetailsModule),
+    data: {
+      breadcrumb: 'Recipe Details'
+    }
   },
   {
     path: 'add',
-    loadChildren: () => import('@app/main.module/recipes.module/recipe-add.module/recipe-add.module').then(m => m.RecipeAddModule)
+    loadChildren: () => import('@app/main.module/recipes.module/recipe-add.module/recipe-add.module').then(m => m.RecipeAddModule),
+    data: {
+      breadcrumb: 'Add Recipe'
+    }
   },
   {
     path: 'edit/:id',
-    loadChildren: () => import('@app/main.module/recipes.module/recipe-edit.module/recipe-edit.module').then(m => m.RecipeEditModule)
+    loadChildren: () => import('@app/main.module/recipes.module/recipe-edit.module/recipe-edit.module').then(m => m.RecipeEditModule),
+    data: {
+      breadcrumb: 'Edit Recipe'
+    }
   }
 ];
 

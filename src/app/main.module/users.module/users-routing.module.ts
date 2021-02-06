@@ -8,19 +8,31 @@ import { UsersComponent }       from '@app/main.module/users.module/users.compon
 const usersRoutes: Routes = [
   {
     path: '',
-    component: UsersComponent
+    component: UsersComponent,
+    data: {
+      breadcrumb: null
+    }
   },
   {
     path: 'details/:id',
-    loadChildren: () => import('@app/main.module/users.module/user-details.module/user-details.module').then(m => m.UserDetailsModule)
+    loadChildren: () => import('@app/main.module/users.module/user-details.module/user-details.module').then(m => m.UserDetailsModule),
+    data: {
+      breadcrumb: 'User Details'
+    }
   },
   {
     path: 'add',
-    loadChildren: () => import('@app/main.module/users.module/user-add.module/user-add.module').then(m => m.UserAddModule)
+    loadChildren: () => import('@app/main.module/users.module/user-add.module/user-add.module').then(m => m.UserAddModule),
+    data: {
+      breadcrumb: 'User Add'
+    }
   },
   {
     path: 'edit/:id',
-    loadChildren: () => import('@app/main.module/users.module/user-edit.module/user-edit.module').then(m => m.UserEditModule)
+    loadChildren: () => import('@app/main.module/users.module/user-edit.module/user-edit.module').then(m => m.UserEditModule),
+    data: {
+      breadcrumb: 'User Edit'
+    }
   }
 ];
 

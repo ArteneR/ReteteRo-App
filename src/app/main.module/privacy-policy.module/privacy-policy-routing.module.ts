@@ -8,7 +8,10 @@ import { PrivacyPolicyComponent } from '@app/main.module/privacy-policy.module/p
 const privacyPolicyRoutes: Routes = [
   {
     path: '',
-    component: PrivacyPolicyComponent
+    component: PrivacyPolicyComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

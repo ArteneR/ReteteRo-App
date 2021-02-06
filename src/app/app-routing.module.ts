@@ -10,19 +10,31 @@ const debugRouting = false;
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('@app/main.module/main.module').then(m => m.MainModule)
+    loadChildren: () => import('@app/main.module/main.module').then(m => m.MainModule),
+    data: {
+      breadcrumb: null
+    }
   },
   {
     path: 'admin',
-    loadChildren: () => import('@app/admin.module/admin.module').then(m => m.AdminModule)
+    loadChildren: () => import('@app/admin.module/admin.module').then(m => m.AdminModule),
+    data: {
+      breadcrumb: null
+    }
   },
   {
     path: 'cheat-sheet',
-    component: CheatSheetComponent 
+    component: CheatSheetComponent,
+    data: {
+      breadcrumb: null
+    }
   },
   { 
     path: '**', 
-    component: PageNotFoundComponent 
+    component: PageNotFoundComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 

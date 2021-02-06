@@ -1,0 +1,59 @@
+@import "variables";
+
+
+.breadcrumbs-component {
+    display: flex;
+    flex-direction: row;
+
+    @color-breadcrumb-main: #EEEEEE;
+    @color-breadcrumb-secondary: #E8E8E8;
+    @color-breadcrumb-active: #56A7C9;
+
+    button {
+        background-color: @color-breadcrumb-main;
+        padding: 10px 20px;
+        border: none;
+
+        &:hover {
+            background-color: lighten(@color-breadcrumb-main, 2%);
+        }
+    }
+
+    .breadcrumbs-back {
+        margin-right: 20px;
+        border-radius: 5px;
+    }
+
+    .breadcrumbs-path {
+        border-radius: 5px;
+        background-color: @color-breadcrumb-secondary;
+
+        button:hover {
+            background-color: lighten(@color-breadcrumb-secondary, 2%);
+        }
+
+        .breadcrumbs-home {
+            background-color: @color-breadcrumb-secondary;
+            border-radius: 5px;
+        }
+
+        .breadcrumbs-location {
+            background-color: @color-breadcrumb-main;
+
+            button:hover {
+                background-color: lighten(@color-breadcrumb-main, 2%);
+            }
+            
+            &:last-child {
+                background-color: @color-breadcrumb-active;
+                color: #FFFFFF;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+
+                &:hover {
+                    background-color: lighten(@color-breadcrumb-active, 2%);
+                }
+            }
+        }
+    }
+}

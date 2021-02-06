@@ -8,7 +8,10 @@ import { ContactComponent }     from '@app/main.module/contact.module/contact.co
 const contactRoutes: Routes = [
   {
     path: '',
-    component: ContactComponent
+    component: ContactComponent,
+    data: {
+      breadcrumb: null
+    }
   }
 ];
 
