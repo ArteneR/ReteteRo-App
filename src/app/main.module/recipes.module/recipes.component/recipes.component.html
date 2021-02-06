@@ -1,8 +1,8 @@
-<div class="recipes-component">
+<div class="recipes-component page-content">
+    <section-title title="Cele mai populare retete"></section-title>
 
-    <div class="section-title">
-        <h2>Cele mai populare retete</h2>
-    </div>
-
-    <app-recipe-card [recipe]="recipe" [availableRecipeCategories]="availableRecipeCategories" *ngFor="let recipe of recipes"></app-recipe-card>
+    <app-recipe-card [recipe]="recipe" 
+                    [availableRecipeCategories]="availableRecipeCategories" 
+                    *ngFor="let recipe of recipes">
+    </app-recipe-card>
 </div>
