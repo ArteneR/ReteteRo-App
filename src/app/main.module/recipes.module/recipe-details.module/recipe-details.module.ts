@@ -3,6 +3,7 @@ import { CommonModule }                from '@angular/common';
 
 import { AngularMaterialModule }       from '@app/_core/angular-material.module.ts';
 import { SectionTitleModule }          from '@app/_modules/section-title.module/section-title.module';
+import { SocialMediaShareModule }      from '@app/_modules/social-media-share.module/social-media-share.module';
 import { RecipeDetailsRoutingModule }  from '@app/main.module/recipes.module/recipe-details.module/recipe-details-routing.module';
 import { RecipeDetailsComponent }      from '@app/main.module/recipes.module/recipe-details.module/recipe-details.component/recipe-details.component';
 import { RecipePreviewComponent }      from '@app/main.module/recipes.module/recipe-details.module/recipe-preview.component/recipe-preview.component';
@@ -27,7 +28,8 @@ import { RecipeRecommendedComponent }  from '@app/main.module/recipes.module/rec
     CommonModule,
     RecipeDetailsRoutingModule,
     AngularMaterialModule,
-    SectionTitleModule
+    SectionTitleModule,
+    SocialMediaShareModule
   ]
 })
 export class RecipeDetailsModule { }
