@@ -1,9 +1,9 @@
 <div class="recipe-preview-component">
-    <section-title title="Ciorba de fasole galbena"></section-title>
+    <section-title title="{{ recipe?.title }}"></section-title>
 
     <div class="recipe-date-and-add-to-favorite">
         <div class="recipe-date">
-            <label>Reteta postata pe: </label><span>31-03-2020</span>
+            <label>Reteta postata pe: </label><span>{{ recipe?.createdAt | date }}</span>
         </div>
 
         <div class="recipe-add-to-favorite secondary-theme">
@@ -16,7 +16,7 @@
             <div class="recipe-author">
                 <span>Postata de</span>
                 <img id="page-wrapper-corner-food-plate" src="assets/images/user-image-placeholder.jpg">
-                <span>Maria Popescu</span>
+                <span>{{ recipe?.author }}</span>
             </div>
 
             <div class="recipe-stats">
@@ -24,7 +24,7 @@
                     <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png">
                     <div class="recipe-stat-details">
                         <label>Dificultate</label>
-                        <span>Medie</span>
+                        <span>{{ recipe?.difficulty }}</span>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                     <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png">
                     <div class="recipe-stat-details">
                         <label>Timp</label>
-                        <span>45 min</span>
+                        <span>{{ recipe?.time }}</span>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                     <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png">
                     <div class="recipe-stat-details">
                         <label>Portii</label>
-                        <span>4-5</span>
+                        <span>{{ recipe?.portions }}</span>
                     </div>
                 </div>
             </div>
@@ -48,24 +48,24 @@
 
         <div class="recipe-images">
             <div class="recipe-image-cover">
-                <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png">
+                <img id="page-wrapper-corner-food-plate" src="assets/images/recipes/{{ recipe?.id }}/{{ recipe?.cover_image }}" default>
             </div>            
 
             <div class="recipe-other-images">
                 <div class="recipe-image">
-                    <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png">
+                    <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png" default>
                 </div>            
 
                 <div class="recipe-image">
-                    <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png">
+                    <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png" default>
                 </div>
 
                 <div class="recipe-image">
-                    <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png">
+                    <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png" default>
                 </div>
 
                 <div class="recipe-image">
-                    <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png">
+                    <img id="page-wrapper-corner-food-plate" src="assets/images/image-placeholder.png" default>
                 </div>
             </div>
         </div>
@@ -74,13 +74,13 @@
     <div class="recipe-vote-and-share">
         <div class="recipe-popularity">
             <div class="recipe-stars">
-                stars
+                {{ recipe?.rating }} stars
             </div>
 
             <div class="recipe-votes-comments-views">
-                <label>15 voturi</label>
-                <label>8 comentarii</label>
-                <label>145 vizualizari</label>
+                <label>{{ recipe?.votes || 0 }} {{ (recipe?.votes == 1) ? 'vot' : 'voturi' }}</label>
+                <label>{{ recipe?.comments || 0 }} {{ (recipe?.comments == 1) ? 'comentariu' : 'comentarii' }}</label>
+                <label>{{ recipe?.views || 0 }} {{ (recipe?.views == 1) ? 'vizualizare' : 'vizualizari' }}</label>
             </div>
         </div>
 

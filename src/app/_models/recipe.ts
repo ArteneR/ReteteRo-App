@@ -4,6 +4,7 @@ export class Recipe {
     author:      string;
     title:       string;
     description: string;
+    createdAt:   string;
     category:    string;
     time:        string;
     difficulty:  string;

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Recipe }                   from '@app/_models/recipe';
 
 
 @Component({
@@ -7,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-preview.component.less']
 })
 export class RecipePreviewComponent implements OnInit {
+    @Input() recipe: Recipe;
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {
+    }
 }

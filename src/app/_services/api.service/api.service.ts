@@ -35,7 +35,13 @@ export class ApiService {
 
         // API: GET /recipes/:id
         public getRecipeById(recipeId: number) {
-            // will use this.http.get()
+                return this.httpClient
+                            .get<Recipe[]>(API_URL + '/recipes/' + recipeId)
+                            .pipe(
+                                map((response: any) => response.data),
+                                tap(recipe => console.log('Fetched Recipe: ', recipe)),
+                                catchError(this.handleError<Recipe>('getRecipeById', null))
+                            );
         }
 
 
