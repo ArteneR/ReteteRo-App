@@ -2,5 +2,60 @@
 
 
 @media all and (max-width: @screen-size-mobile-max-width) {
+    .recipe-preview-component {
+
+        .recipe-author-stats-images {
+
+            .recipe-author-and-stats {
+                margin-right: 0;
+                min-width: 100%;
+
+                .recipe-author {
+                    margin-left: auto;
+                    margin-right: auto;
+                    min-width: 100%;
+                }
+
+                .recipe-stats {
+                    width: 50%;
+                }
+            }
+
+            .recipe-images {
+                min-width: 100%;
+
+                .recipe-image-cover {
+                    width: 100%;
+                    height: auto;
     
+                    img {
+                        object-fit: cover;
+                    }
+                }
+    
+                .recipe-other-images {
+                    flex-wrap: wrap;
+
+                    .recipe-image {
+                        width: 48%;
+                        height: 120px;
+                        margin: 1%;
+
+                        &:nth-child(even) {
+                            margin-right: 0;
+                        }
+
+                        &:nth-child(odd) {
+                            margin-left: 0;
+                        }
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
