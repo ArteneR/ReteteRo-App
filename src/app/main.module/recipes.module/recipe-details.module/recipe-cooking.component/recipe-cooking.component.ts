@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'recipe-cooking',
   templateUrl: './recipe-cooking.component.html',
-  styleUrls: ['./recipe-cooking.component.less']
+  styleUrls: ['./recipe-cooking.component.less', 'recipe-cooking.component.mobile.less']
 })
 export class RecipeCookingComponent implements OnInit {
 

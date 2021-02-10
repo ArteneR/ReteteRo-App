@@ -1,6 +1,7 @@
 import { NgModule }                    from '@angular/core';
 import { CommonModule }                from '@angular/common';
 
+import { AngularSvgIconModule }        from 'angular-svg-icon';
 import { AngularMaterialModule }       from '@app/_core/angular-material.module.ts';
 import { ImageFallbackModule }         from '@app/_modules/image-fallback.module/image-fallback.module';
 import { SectionTitleModule }          from '@app/_modules/section-title.module/section-title.module';
@@ -27,6 +28,7 @@ import { RecipeRecommendedComponent }  from '@app/main.module/recipes.module/rec
   ],
   imports: [
     CommonModule,
+    AngularSvgIconModule,
     RecipeDetailsRoutingModule,
     AngularMaterialModule,
     ImageFallbackModule,

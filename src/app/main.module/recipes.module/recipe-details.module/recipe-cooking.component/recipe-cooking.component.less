@@ -1,20 +1,33 @@
+@import "variables";
+
+
 .recipe-cooking-component {
 
     .recipe-ingredients-and-preparation-method {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            font-style: italic;
+            color: @color-secondary;
+
+            svg-icon {
+                margin-right: 10px;
+            }
+        }
 
         .recipe-ingredients {
             margin-right: 40px;
+            margin-bottom: 60px;
             flex: 2;
-
-            h2 {
-                text-align: center;
-            }
+            min-width: 350px;
 
             table {
-                margin-top: 20px;
+                margin: 40px auto 0 auto;
 
                 tbody tr td {
                     border: 1px solid #EEEEEE;
@@ -34,19 +47,18 @@
 
         .recipe-preparation-method {
             flex: 3;
-
-            h2 {
-                text-align: center;
-            }
+            min-width: 450px;
+            margin-bottom: 60px;
 
             table {
-                margin-top: 20px;
+                margin: 40px auto 0 auto;
             
                 tbody tr td {
                     padding: 10px;
 
                     &:first-child {
-                        font-size: 28px;
+                        font-size: 30px;
+                        color: @color-secondary;
                     }
 
                     &:last-child {
@@ -69,6 +81,7 @@
             font-size: 40px;
             font-style: italic;
             margin: 0 40px;
+            color: @color-secondary;
         }
 
         .recipe-enjoy-your-meal-line {
