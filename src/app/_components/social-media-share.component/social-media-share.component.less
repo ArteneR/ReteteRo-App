@@ -2,15 +2,74 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
+
+    @color-default:            #808080;
+    @color-facebook-like:      #E2E6EE;
+    @color-facebook-share:     #4764B4;
+    @color-twitter:            #54ABED;
+    @color-email:              #656565;
+    @color-print:              #F30416;
+    @color-text-facebook-like: #4763B2;
 
     .social-media-share-button {
-        background-color: grey;
-        width: 100%;
+        background-color: @color-default;
+        width: auto;
         margin: 10px;
         border-radius: 5px;
-        padding: 5px 20px;
+        padding: 5px 35px;
         text-align: center;
         white-space: nowrap;
         color: #FFFFFF;
+        cursor: pointer;
+
+        svg-icon {
+            margin-right: 10px;
+        }
+
+        &.facebook-like {
+            background-color: @color-facebook-like;
+            color: @color-text-facebook-like;
+
+            &:hover {
+                background-color: lighten(@color-facebook-like, 3%);
+            }
+        }
+
+
+        &.facebook-share {
+            background-color: @color-facebook-share;
+
+            &:hover {
+                background-color: lighten(@color-facebook-share, 3%);
+            }
+        }
+
+
+        &.twitter {
+            background-color: @color-twitter;
+
+            &:hover {
+                background-color: lighten(@color-twitter, 3%);
+            }
+        }
+
+
+        &.email {
+            background-color: @color-email;
+
+            &:hover {
+                background-color: lighten(@color-email, 3%);
+            }
+        }
+
+
+        &.print {
+            background-color: @color-print;
+
+            &:hover {
+                background-color: lighten(@color-print, 3%);
+            }
+        }
     }
 }
