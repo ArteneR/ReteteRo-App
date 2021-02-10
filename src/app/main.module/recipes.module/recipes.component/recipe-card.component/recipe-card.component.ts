@@ -13,7 +13,4 @@ export class RecipeCardComponent {
     @Input() recipe: Recipe;
     @Input() availableRecipeCategories: AvailableRecipeCategory[];
     totalStars = Array(5);
-
-
-    constructor() { }
 }

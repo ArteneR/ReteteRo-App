@@ -14,7 +14,7 @@
     <div class="recipe-author-stats-images">
         <div class="recipe-author-and-stats">
             <div class="recipe-author">
-                <span>Postata de</span>
+                <label>Postata de</label>
                 <img id="page-wrapper-corner-food-plate" src="assets/images/user-image-placeholder.jpg">
                 <span>{{ recipe?.author }}</span>
             </div>
@@ -80,7 +80,7 @@
     <div class="recipe-vote-and-share">
         <div class="recipe-popularity">
             <div class="recipe-stars">
-                {{ recipe?.rating }} stars
+                <svg-icon *ngFor="let star of totalStars; let i = index;" src="assets/icons/{{ (i < recipe?.rating) ? 'star-solid.svg' : 'star-regular.svg'}}"></svg-icon>
             </div>
 
             <div class="recipe-votes-comments-views">

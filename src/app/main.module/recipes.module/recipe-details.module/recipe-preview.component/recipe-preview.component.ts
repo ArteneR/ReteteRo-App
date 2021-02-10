@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import { Recipe }                   from '@app/_models/recipe';
+import { Recipe }           from '@app/_models/recipe';
 
 
 @Component({
@@ -8,11 +8,7 @@ import { Recipe }                   from '@app/_models/recipe';
   templateUrl: './recipe-preview.component.html',
   styleUrls: ['./recipe-preview.component.less', 'recipe-preview.component.mobile.less']
 })
-export class RecipePreviewComponent implements OnInit {
+export class RecipePreviewComponent {
     @Input() recipe: Recipe;
-
-    constructor() { }
-
-    ngOnInit(): void {
-    }
+    totalStars = Array(5);
 }

@@ -1,4 +1,14 @@
+@import "variables";
+
+
 .recipe-vote-and-share-component {
+    label {
+        color: #646F76;
+        font-size: 30px;
+        font-style: italic;
+        line-height: 120%;
+        text-align: center;
+    }
 
     .recipe-vote-and-share {
         display: flex;
@@ -11,6 +21,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            .recipe-stars {
+                color: @color-secondary;
+                font-size: 50px;
+            }
         }
 
         .recipe-share {
@@ -18,7 +33,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 40px;
+            margin-top: 60px;
             width: 100%;
 
             social-media-share {

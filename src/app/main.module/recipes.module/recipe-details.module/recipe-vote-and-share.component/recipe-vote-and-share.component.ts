@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { Recipe }           from '@app/_models/recipe';
 
 
 @Component({
@@ -6,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './recipe-vote-and-share.component.html',
   styleUrls: ['./recipe-vote-and-share.component.less']
 })
-export class RecipeVoteAndShareComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class RecipeVoteAndShareComponent {
+    @Input() recipe: Recipe;
+    totalStars = Array(5);
 }

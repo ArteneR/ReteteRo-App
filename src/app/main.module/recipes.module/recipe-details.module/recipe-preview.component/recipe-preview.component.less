@@ -10,7 +10,15 @@
         margin: 20px 0;
 
         .recipe-date {
-
+            color: #646F76;
+            font-size: 20px;
+            margin-right: 20px;
+            
+            span {
+                color: @color-secondary;
+                font-weight: bold;
+                white-space: nowrap;
+            }
         }
     
         .recipe-add-to-favorite {
@@ -44,12 +52,22 @@
                 border-radius: 10px;
                 margin-right: 20px;
                 margin-bottom: 20px;
+                color: #646F76;
+
+                label {
+                    font-size: 20px;
+                }
 
                 img {
                     width: 150px;
                     height: 150px;
                     border-radius: 50%;
-                    margin: 10px;
+                    margin: 10px 0 20px 0;
+                }
+
+                span {
+                    font-size: 30px;
+                    color: @color-secondary;
                 }
             }
 
@@ -98,6 +116,13 @@
                         flex-direction: column;
                         justify-content: center;
                         margin-left: 15px;
+                        font-size: 18px;
+                        color: #646F76;
+
+                        span {
+                            color: @color-secondary;
+                            font-weight: bold;
+                        }
                     }
                 }
             }
@@ -163,15 +188,30 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            color: @color-secondary;
+            font-weight: bold;
+            font-size: 20px;
 
             .recipe-stars {
+                font-size: 30px;
+                white-space: nowrap;
+                margin-right: 20px;
+                margin-bottom: 10px;
 
+                svg-icon * {
+                    top: 0;
+                }
             }
 
             .recipe-votes-comments-views {
+                display: flex;
+                flex-wrap: wrap;
 
                 label {
                     margin-left: 60px;
+                    white-space: nowrap;
                 }
             }
         }
