@@ -6,7 +6,7 @@ import { Recipe }                   from '@app/_models/recipe';
 @Component({
   selector: 'recipe-preview',
   templateUrl: './recipe-preview.component.html',
-  styleUrls: ['./recipe-preview.component.less']
+  styleUrls: ['./recipe-preview.component.less', 'recipe-preview.component.mobile.less']
 })
 export class RecipePreviewComponent implements OnInit {
     @Input() recipe: Recipe;
