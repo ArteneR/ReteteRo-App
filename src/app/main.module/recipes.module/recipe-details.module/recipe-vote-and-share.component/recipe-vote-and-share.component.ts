@@ -6,7 +6,7 @@ import { Recipe }           from '@app/_models/recipe';
 @Component({
   selector: 'recipe-vote-and-share',
   templateUrl: './recipe-vote-and-share.component.html',
-  styleUrls: ['./recipe-vote-and-share.component.less']
+  styleUrls: ['./recipe-vote-and-share.component.less', 'recipe-vote-and-share.component.mobile.less']
 })
 export class RecipeVoteAndShareComponent {
     @Input() recipe: Recipe;
