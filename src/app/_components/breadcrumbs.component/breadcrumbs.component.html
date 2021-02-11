@@ -10,7 +10,8 @@
         </button>
 
         <button class="breadcrumbs-location" *ngFor="let menuItem of menuItems" [routerLink]="[menuItem.url]">
-            {{ menuItem.label }}
+            <div class="arrow-right"></div>
+            <span>{{ menuItem.label }}</span>
         </button>
     </div>
 </div>

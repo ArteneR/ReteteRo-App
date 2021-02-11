@@ -44,22 +44,39 @@
         border-radius: 5px;
         background-color: @color-breadcrumb-secondary;
 
-        button:hover {
-            background-color: lighten(@color-breadcrumb-secondary, 2%);
-        }
-
         .breadcrumbs-home {
             background-color: @color-breadcrumb-secondary;
             color: @color-breadcrumb-accent;
             border-radius: 5px;
             font-size: 18px;
+
+            &:hover {
+                background-color: lighten(@color-breadcrumb-secondary, 2%);
+            }
         }
 
         .breadcrumbs-location {
             background-color: @color-breadcrumb-main;
+            position: relative;
 
-            button:hover {
+            &:hover {
                 background-color: lighten(@color-breadcrumb-main, 2%);
+
+                .arrow-right {
+                    border-left-color: lighten(@color-breadcrumb-main, 2%);;
+                }
+            }
+
+            .arrow-right {
+                position: absolute;
+                width: 0; 
+                height: 0; 
+                border-top: 22px solid transparent;
+                border-bottom: 22px solid transparent;
+                top: 0;
+                right: -10px;
+                border-left: 10px solid @color-breadcrumb-main;
+                z-index: 1000;
             }
             
             &:last-child {
@@ -70,6 +87,10 @@
 
                 &:hover {
                     background-color: lighten(@color-breadcrumb-active, 2%);
+                }
+
+                .arrow-right {
+                    display: none;
                 }
             }
         }
