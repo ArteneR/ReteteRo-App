@@ -9,7 +9,7 @@ import { BreadcrumbItem }                        from '@app/_models/breadcrumb-i
 @Component({
   selector: 'breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
-  styleUrls: ['./breadcrumbs.component.less']
+  styleUrls: ['./breadcrumbs.component.less', 'breadcrumbs.component.mobile.less']
 })
 export class BreadcrumbsComponent implements OnInit {
     static readonly ROUTE_DATA_BREADCRUMB = 'breadcrumb';

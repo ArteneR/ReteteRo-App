@@ -8,11 +8,17 @@
     @color-breadcrumb-main: #EEEEEE;
     @color-breadcrumb-secondary: #E8E8E8;
     @color-breadcrumb-active: #56A7C9;
+    @color-breadcrumb-accent: #237BA0;
 
     button {
         background-color: @color-breadcrumb-main;
-        padding: 10px 20px;
+        color: #888888;
+        padding: 10px 28px;
         border: none;
+        outline: none;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
 
         &:hover {
             background-color: lighten(@color-breadcrumb-main, 2%);
@@ -22,6 +28,16 @@
     .breadcrumbs-back {
         margin-right: 20px;
         border-radius: 5px;
+        background-color: @color-breadcrumb-accent;
+        color: #FFFFFF;
+
+        &:hover {
+            background-color: lighten(@color-breadcrumb-accent, 2%);
+        }
+
+        svg-icon {
+            margin-right: 5px;
+        }
     }
 
     .breadcrumbs-path {
@@ -34,7 +50,9 @@
 
         .breadcrumbs-home {
             background-color: @color-breadcrumb-secondary;
+            color: @color-breadcrumb-accent;
             border-radius: 5px;
+            font-size: 18px;
         }
 
         .breadcrumbs-location {

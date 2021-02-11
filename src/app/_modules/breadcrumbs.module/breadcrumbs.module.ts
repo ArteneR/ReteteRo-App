@@ -1,8 +1,9 @@
-import { NgModule }            from '@angular/core';
-import { CommonModule }        from '@angular/common';
-import { RouterModule }        from '@angular/router';
+import { NgModule }             from '@angular/core';
+import { CommonModule }         from '@angular/common';
+import { RouterModule }         from '@angular/router';
 
-import { BreadcrumbsComponent} from '@app/_components/breadcrumbs.component/breadcrumbs.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { BreadcrumbsComponent}  from '@app/_components/breadcrumbs.component/breadcrumbs.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { BreadcrumbsComponent} from '@app/_components/breadcrumbs.component/brea
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        AngularSvgIconModule
     ]
 })
 export class BreadcrumbsModule { }

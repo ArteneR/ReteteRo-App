@@ -1,9 +1,12 @@
 <div class="breadcrumbs-component page-content">
-    <button class="breadcrumbs-back" (click)="goBack()">Inapoi</button>
+    <button class="breadcrumbs-back" (click)="goBack()">
+        <svg-icon src="assets/icons/chevron-left-solid.svg"></svg-icon>
+        <span>Inapoi</span>
+    </button>
 
     <div class="breadcrumbs-path">
         <button class="breadcrumbs-home" [routerLink]="[home.url]">
-            {{ home.label }}
+            <svg-icon src="assets/icons/home-solid.svg"></svg-icon>
         </button>
 
         <button class="breadcrumbs-location" *ngFor="let menuItem of menuItems" [routerLink]="[menuItem.url]">
