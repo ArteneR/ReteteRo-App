@@ -24,7 +24,7 @@ export class RecipesComponent implements OnInit {
         }
 
 
-        getAllRecipes(): void {
+        private getAllRecipes(): void {
                 this.apiService
                     .getAllRecipes()
                     .subscribe(
@@ -36,9 +36,9 @@ export class RecipesComponent implements OnInit {
 
         private getAllAvailableRecipeCategories() {
                 this.apiService.getAllAvailableRecipeCategories()
-                                .subscribe(
-                                  availableRecipeCategories => this.availableRecipeCategories = availableRecipeCategories,
-                                  error                     => console.log("ERROR: ", error)
-                                );
+                    .subscribe(
+                        availableRecipeCategories => this.availableRecipeCategories = availableRecipeCategories,
+                        error                     => console.log("ERROR: ", error)
+                    );
         }
 }

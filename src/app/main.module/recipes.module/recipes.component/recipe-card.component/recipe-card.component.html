@@ -13,7 +13,7 @@
             <div class="recipe-card-category">
                 <div class="recipe-card-stats __mobile-only">
                     <span>Timp: <strong>{{ recipe?.time }}</strong></span>
-                    <span>Dificultate: <strong>{{ recipe?.difficulty }}</strong></span>
+                    <span>Dificultate: <strong>{{ difficultyOptions[recipe?.difficulty] }}</strong></span>
                 </div>
 
                 <div class="recipe-card-category-inner">
@@ -31,7 +31,7 @@
 
             <div class="recipe-card-stats __desktop-only">
                 <span>Timp: <strong>{{ recipe?.time }}</strong></span>
-                <span>Dificultate: <strong>{{ recipe?.difficulty }}</strong></span>
+                <span>Dificultate: <strong>{{ difficultyOptions[recipe?.difficulty] }}</strong></span>
             </div>
         </div>
 
