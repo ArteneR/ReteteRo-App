@@ -16,7 +16,9 @@ export class ImageFallbackDirective {
 
 
     updateUrl() {
-        this.src = this.default || 'assets/images/image-placeholder.png';
+        this.src = ((this.default == 'avatar') ? 
+                    'assets/images/placeholders/user-image-placeholder.jpg' : 
+                    'assets/images/placeholders/image-placeholder.png');
     }
 
 
