@@ -38,21 +38,19 @@ const routes: Routes = [
   }
 ];
 
-const routesOptions = {
-  enableTracing: debugRouting    // <-- debugging purposes only
-};
-
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, routesOptions)
+    RouterModule.forRoot(routes, {
+      enableTracing:             debugRouting,    // <-- debugging purposes only
+      scrollPositionRestoration: 'enabled'        // In order to scroll to top of the page when navigating
+    })
   ],
   exports: [
     RouterModule
   ]
 })
 export class AppRoutingModule { 
-    
     constructor(router: Router) {
         if (debugRouting) {
           // Use a custom replacer to display function names in the route configs:
