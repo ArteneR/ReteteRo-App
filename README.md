@@ -236,3 +236,18 @@ Heroku configuration:
 
 - Generate interface:
     ng generate interface <interface_name>
+
+
+
+## Access object property when it could be null:
+
+- ?. operator for accessing properties
+    recipe?.ingredients     // if recipe is null (eg. data didn't arrive yet from server, it will not throw any error, it would just not display this line)
+
+
+## Debugging (for objects):
+
+- Display object as json
+    {{ recipe?.ingredients | json }}
+
+

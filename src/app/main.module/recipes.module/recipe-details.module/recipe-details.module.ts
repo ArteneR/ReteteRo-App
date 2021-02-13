@@ -6,6 +6,7 @@ import { AngularMaterialModule }       from '@app/_core/angular-material.module.
 import { ImageFallbackModule }         from '@app/_modules/image-fallback.module/image-fallback.module';
 import { SectionTitleModule }          from '@app/_modules/section-title.module/section-title.module';
 import { SocialMediaShareModule }      from '@app/_modules/social-media-share.module/social-media-share.module';
+import { OrderByPipe }                 from '@app/_pipes/order-by.pipe/order-by.pipe';
 import { RecipeDetailsRoutingModule }  from '@app/main.module/recipes.module/recipe-details.module/recipe-details-routing.module';
 import { RecipeDetailsComponent }      from '@app/main.module/recipes.module/recipe-details.module/recipe-details.component/recipe-details.component';
 import { RecipePreviewComponent }      from '@app/main.module/recipes.module/recipe-details.module/recipe-preview.component/recipe-preview.component';
@@ -18,6 +19,7 @@ import { RecipeRecommendedComponent }  from '@app/main.module/recipes.module/rec
 
 @NgModule({
   declarations: [
+    OrderByPipe,
     RecipeDetailsComponent,
     RecipePreviewComponent,
     RecipeCookingComponent,
