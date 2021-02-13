@@ -84,9 +84,9 @@
             </div>
 
             <div class="recipe-votes-comments-views">
-                <label>{{ recipe?.votes || 0 }} {{ (recipe?.votes == 1) ? 'vot' : 'voturi' }}</label>
-                <label>{{ recipe?.comments || 0 }} {{ (recipe?.comments == 1) ? 'comentariu' : 'comentarii' }}</label>
-                <label>{{ recipe?.views || 0 }} {{ (recipe?.views == 1) ? 'vizualizare' : 'vizualizari' }}</label>
+                <label>{{ recipe?.total_votes    || 0 }} {{ (recipe?.total_votes    == 1) ? 'vot'         : 'voturi' }}</label>
+                <label>{{ recipe?.total_comments || 0 }} {{ (recipe?.total_comments == 1) ? 'comentariu'  : 'comentarii' }}</label>
+                <label>{{ recipe?.total_views    || 0 }} {{ (recipe?.total_views    == 1) ? 'vizualizare' : 'vizualizari' }}</label>
             </div>
         </div>
 

@@ -1,57 +1,57 @@
 <div class="recipe-card-component">
     <div class="recipe-card-image">
-        <img src="assets/images/recipes/{{ recipe.id }}/{{ recipe.cover_image }}" default>
+        <img src="assets/images/recipes/{{ recipe?.id }}/{{ recipe?.cover_image }}" default>
     </div>
 
     <div class="recipe-card-info">
         <div class="recipe-card-top">
             <div class="recipe-card-title">
-                <h2>{{ recipe.title }}</h2>
-                <h5>Postat de: <strong><a [routerLink]="['/users', recipe.author_id]" target="_blank">{{ recipe.author }}</a></strong></h5>
+                <h2>{{ recipe?.title }}</h2>
+                <h5>Postat de: <strong><a [routerLink]="['/users', recipe?.author_id]" target="_blank">{{ recipe?.author }}</a></strong></h5>
             </div>
 
             <div class="recipe-card-category">
                 <div class="recipe-card-stats __mobile-only">
-                    <span>Timp: <strong>{{ recipe.time }}</strong></span>
-                    <span>Dificultate: <strong>{{ recipe.difficulty }}</strong></span>
+                    <span>Timp: <strong>{{ recipe?.time }}</strong></span>
+                    <span>Dificultate: <strong>{{ recipe?.difficulty }}</strong></span>
                 </div>
 
                 <div class="recipe-card-category-inner">
                     <svg-icon src="assets/icons/bookmark-regular.svg"></svg-icon> 
 
                     <div *ngFor="let availableRecipeCategory of availableRecipeCategories">
-                        <span *ngIf="availableRecipeCategory.id === recipe.category">{{ availableRecipeCategory.category }}</span>
+                        <span *ngIf="availableRecipeCategory.id === recipe?.category">{{ availableRecipeCategory.category }}</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="recipe-card-middle">
-            <p class="recipe-card-description">{{ recipe.description }}</p>
+            <p class="recipe-card-description">{{ recipe?.description }}</p>
 
             <div class="recipe-card-stats __desktop-only">
-                <span>Timp: <strong>{{ recipe.time }}</strong></span>
-                <span>Dificultate: <strong>{{ recipe.difficulty }}</strong></span>
+                <span>Timp: <strong>{{ recipe?.time }}</strong></span>
+                <span>Dificultate: <strong>{{ recipe?.difficulty }}</strong></span>
             </div>
         </div>
 
         <div class="recipe-card-bottom">
             <div class="recipe-card-popularity">
                 <div class="recipe-card-stars">
-                    <svg-icon *ngFor="let star of totalStars; let i = index;" src="assets/icons/{{ (i < recipe.rating) ? 'star-solid.svg' : 'star-regular.svg'}}"></svg-icon>
+                    <svg-icon *ngFor="let star of totalStars; let i = index;" src="assets/icons/{{ (i < recipe?.rating) ? 'star-solid.svg' : 'star-regular.svg'}}"></svg-icon>
                 </div>
 
                 <div class="recipe-card-votes">
-                    {{ recipe.votes }} {{ (recipe.votes === 1) ? 'vot' : 'voturi' }}
+                    {{ recipe?.total_votes }} {{ (recipe?.total_votes === 1) ? 'vot' : 'voturi' }}
                 </div>
 
                 <div class="recipe-card-comments">
-                    {{ recipe.comments }} {{ (recipe.comments === 1) ? 'comentariu' : 'comentarii' }}
+                    {{ recipe?.total_comments }} {{ (recipe?.total_comments === 1) ? 'comentariu' : 'comentarii' }}
                 </div>
             </div>
 
             <div class="recipe-card-see-recipe secondary-theme">
-                <button mat-flat-button color="primary" [routerLink]="['/recipes/details', recipe.id]">Vezi Reteta</button>
+                <button mat-flat-button color="primary" [routerLink]="['/recipes/details', recipe?.id]">Vezi Reteta</button>
             </div>
         </div>
     </div>

@@ -14,9 +14,9 @@ export class Recipe {
     difficulty:         string;
     portions:           number;
     cover_image:        string;
-    votes:              number;
-    comments:           number;
-    views:              number;
+    total_votes:        number;
+    total_comments:     number;
+    total_views:        number;
     rating:             number;
     ingredients:        RecipeIngredient[];
     preparation_method: RecipeDirection[];
