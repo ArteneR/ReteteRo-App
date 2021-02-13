@@ -60,6 +60,24 @@
         align-self: center;
         position: relative;
 
+        #add-recipe-button {
+            background-color: @color-tertiary;
+            position: absolute;
+            top: -40px;
+            right: 0;
+            height: 40px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+            svg-icon {
+                margin-right: 5px;
+
+                & * {
+                    top: 0;
+                }
+            }
+        }
+
         #page-wrapper-corner-food-plate {
             width: 400px;
             height: auto;
