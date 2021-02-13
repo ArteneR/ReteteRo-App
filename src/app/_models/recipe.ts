@@ -1,5 +1,6 @@
 import { RecipeIngredient } from '@app/_models/recipe-ingredient';
 import { RecipeDirection }  from '@app/_models/recipe-direction';
+import { RecipeImage }      from '@app/_models/recipe-image';
 
 
 export class Recipe {
@@ -20,4 +21,5 @@ export class Recipe {
     rating:             number;
     ingredients:        RecipeIngredient[];
     preparation_method: RecipeDirection[];
+    images:             RecipeImage[];
 }

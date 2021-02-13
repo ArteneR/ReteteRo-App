@@ -11,8 +11,9 @@ import { FieldsService }            from '@app/_services/fields.service/fields.s
 })
 export class RecipePreviewComponent implements OnInit {
     @Input() recipe: Recipe;
-    totalStars = Array(5);
-    difficultyOptions = {};
+    totalStars         = Array(5);
+    totalPreviewImages = Array(4);
+    difficultyOptions  = {};
 
 
     constructor(private fieldsService: FieldsService) { }

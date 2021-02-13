@@ -15,7 +15,7 @@
         <div class="recipe-author-and-stats">
             <div class="recipe-author">
                 <label>Postata de</label>
-                <img id="page-wrapper-corner-food-plate" src="" default="avatar">
+                <img src="" default="avatar">
                 <span>{{ recipe?.author }}</span>
             </div>
 
@@ -54,24 +54,12 @@
 
         <div class="recipe-images">
             <div class="recipe-image-cover">
-                <img id="page-wrapper-corner-food-plate" src="assets/images/recipes/{{ recipe?.id }}/{{ recipe?.cover_image }}" default>
+                <img src="assets/images/recipes/{{ recipe?.id }}/{{ recipe?.cover_image }}" default>
             </div>            
 
             <div class="recipe-other-images">
-                <div class="recipe-image">
-                    <img id="page-wrapper-corner-food-plate" src="assets/images/recipes/1/pui-marinat-cu-sos-de-rosii-cu-iaurt.jpg" default>
-                </div>            
-
-                <div class="recipe-image">
-                    <img id="page-wrapper-corner-food-plate" src="assets/images/recipes/2/tocanita-de-vita-cu-legume-la-cuptor-8237.jpg" default>
-                </div>
-
-                <div class="recipe-image">
-                    <img id="page-wrapper-corner-food-plate" src="assets/images/recipes/3/muschiulet-de-vita-cu-salsa-de-porumb-si-cartofi-dulci.jpg" default>
-                </div>
-
-                <div class="recipe-image">
-                    <img id="page-wrapper-corner-food-plate" src="assets/images/recipes/4/muschiulet-marinat-la-gratar-cu-spanac.jpg" default>
+                <div class="recipe-image" *ngFor="let previewImage of totalPreviewImages; let i = index;">
+                    <img src="assets/images/recipes/{{ recipe?.id }}/{{ recipe?.images[i]?.image }}" default>
                 </div>
             </div>
         </div>
